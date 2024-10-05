@@ -93,9 +93,9 @@ horizontal_alignment = 1
 [node name="battleground" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.201389
+anchor_left = 0.0876736
 anchor_top = 0.37037
-anchor_right = 0.798611
+anchor_right = 0.861111
 anchor_bottom = 0.697531
 grow_horizontal = 2
 grow_vertical = 2
@@ -117,6 +117,160 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "BATTLEGROUND"
 horizontal_alignment = 1
+
+[node name="PopCardSlot" type="MarginContainer" parent="battleground"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.00002
+offset_right = 144.0
+offset_bottom = 210.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="battleground/PopCardSlot"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="battleground/PopCardSlot/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="battleground/PopCardSlot"]
+layout_mode = 2
+text = "POP CARD"
+horizontal_alignment = 1
+
+[node name="PopCardButton" type="Button" parent="battleground/PopCardSlot"]
+layout_mode = 2
+
+[node name="GermCardSlot" type="MarginContainer" parent="battleground"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 4.00002
+offset_right = 296.0
+offset_bottom = 210.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="battleground/GermCardSlot"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="battleground/GermCardSlot/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="battleground/GermCardSlot"]
+layout_mode = 2
+text = "GERM CARD"
+horizontal_alignment = 1
+
+[node name="GermCardButton" type="Button" parent="battleground/GermCardSlot"]
+layout_mode = 2
+
+[node name="UtilSlot" type="MarginContainer" parent="battleground"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 4.00003
+offset_right = 446.0
+offset_bottom = 210.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="battleground/UtilSlot/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="battleground/UtilSlot"]
+layout_mode = 2
+text = "UTIL
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="battleground/UtilSlot"]
+layout_mode = 2
+
+[node name="UtilSlot2" type="MarginContainer" parent="battleground"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 4.00003
+offset_right = 595.0
+offset_bottom = 210.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot2"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="battleground/UtilSlot2/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="battleground/UtilSlot2"]
+layout_mode = 2
+text = "UTIL
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="battleground/UtilSlot2"]
+layout_mode = 2
+
+[node name="UtilSlot3" type="MarginContainer" parent="battleground"]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 4.00003
+offset_right = 743.0
+offset_bottom = 210.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot3"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="battleground/UtilSlot3/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="battleground/UtilSlot3"]
+layout_mode = 2
+text = "UTIL
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="battleground/UtilSlot3"]
+layout_mode = 2
+
+[node name="UtilSlot4" type="MarginContainer" parent="battleground"]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 3.00002
+offset_right = 888.0
+offset_bottom = 209.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot4"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="battleground/UtilSlot4/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="battleground/UtilSlot4"]
+layout_mode = 2
+text = "UTIL
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="battleground/UtilSlot4"]
+layout_mode = 2
 
 [node name="enemystats" type="ColorRect" parent="."]
 layout_mode = 1
@@ -192,17 +346,16 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "TURN LIMIT"
 
-[node name="deploybutton" type="ColorRect" parent="."]
+[node name="deploybutton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.856771
+anchor_left = 0.871528
 anchor_top = 0.459877
-anchor_right = 0.967014
+anchor_right = 0.981771
 anchor_bottom = 0.592593
 offset_left = 2.28882e-05
 grow_horizontal = 0
 grow_vertical = 2
-color = Color(0.32, 0.592, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="deploybutton"]
@@ -221,10 +374,11 @@ grow_vertical = 2
 text = "DEPLOY"
 horizontal_alignment = 1
 
-[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("hand", "deck")]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("hand", "deck", "util_buttons")]
 script = ExtResource("1_a3i36")
 hand = NodePath("../Hand")
 deck = NodePath("../Deck")
+util_buttons = [NodePath("../battleground/UtilSlot/Button"), NodePath("../battleground/UtilSlot2/Button"), NodePath("../battleground/UtilSlot3/Button"), NodePath("../battleground/UtilSlot4/Button")]
 
 [node name="UIController" type="Node" parent="."]
 script = ExtResource("2_dp5jn")
@@ -239,3 +393,6 @@ script = ExtResource("3_loohh")
 
 [node name="GameStateBase" type="Node" parent="GameStateMachine"]
 script = ExtResource("2_dwdl8")
+
+[connection signal="pressed" from="battleground/PopCardSlot/PopCardButton" to="GameController" method="_on_pop_card_button_pressed"]
+[connection signal="pressed" from="battleground/GermCardSlot/GermCardButton" to="GameController" method="_on_germ_card_button_pressed"]
