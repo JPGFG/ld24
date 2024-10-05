@@ -8,8 +8,8 @@
 script = ExtResource("1_xxnle")
 card_image = ExtResource("1_mgwyg")
 germ_image = ExtResource("2_u5e6a")
-multipler = 20
-adder = 0
+multiplier = 10
+adder = 10
 card_type = 0
 color = Color(0, 0, 0, 1)
 description = "You for sure don't wash your hands"

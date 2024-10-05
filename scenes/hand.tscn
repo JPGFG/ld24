@@ -1,24 +1,30 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwlu63c2x5m75"]
 
-[ext_resource type="PackedScene" uid="uid://cwsv7v63wvlum" path="res://scenes/cards/pop_card.tscn" id="1_jlwkv"]
+[ext_resource type="Script" path="res://scripts/hand.gd" id="1_utt7h"]
 
 [node name="HandHBox" type="HBoxContainer"]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 766.0
 grow_vertical = 2
+script = ExtResource("1_utt7h")
 
-[node name="Card" parent="." instance=ExtResource("1_jlwkv")]
+[node name="Control" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Card2" parent="." instance=ExtResource("1_jlwkv")]
+[node name="Control2" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Card3" parent="." instance=ExtResource("1_jlwkv")]
+[node name="Control3" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Card4" parent="." instance=ExtResource("1_jlwkv")]
+[node name="Control4" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Card5" parent="." instance=ExtResource("1_jlwkv")]
+[node name="Control5" type="Control" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3

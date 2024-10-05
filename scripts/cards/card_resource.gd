@@ -7,7 +7,7 @@ enum CardType { POPULATION, DISEASE, ADDER }
 
 @export var card_image: Texture2D
 @export var germ_image: Texture2D
-@export var multipler: int
+@export var multiplier: int
 @export var adder: int
 @export var card_type: CardType
 @export var color: Color
@@ -19,7 +19,7 @@ enum CardType { POPULATION, DISEASE, ADDER }
 
 func _init(
 	p_card_image = null,
-	p_multipler = 0,
+	p_multiplier = 0,
 	p_adder = 0,
 	p_card_type = CardType.POPULATION,
 	p_color = Color(1, 1, 1, 1),
@@ -29,7 +29,7 @@ func _init(
 	p_rarity = Rarity.COMMON
 ):
 	card_image = p_card_image
-	multipler = p_multipler
+	multiplier = p_multiplier
 	adder = p_adder
 	card_type = p_card_type
 	color = p_color
