@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DeckResource" load_steps=7 format=3 uid="uid://dogj1qx38hwul"]
+
+[ext_resource type="Resource" uid="uid://dcrkkjw5njfc5" path="res://resources/cards/germ/common_cold.tres" id="1_fd7as"]
+[ext_resource type="Script" path="res://scripts/cards/deck_resource.gd" id="1_haj3m"]
+[ext_resource type="Resource" uid="uid://bd8x5g2uoi4q5" path="res://resources/cards/populations/burnouts.tres" id="2_2xq4n"]
+[ext_resource type="Resource" uid="uid://1xxxgenvf8vk" path="res://resources/cards/populations/jocks.tres" id="3_jatsm"]
+[ext_resource type="Resource" uid="uid://di5iu1et6jwnr" path="res://resources/cards/populations/lunch_lady.tres" id="4_qfd7o"]
+[ext_resource type="Resource" uid="uid://cxu63e8yqstxa" path="res://resources/cards/populations/students.tres" id="5_ml634"]
+
+[resource]
+script = ExtResource("1_haj3m")
+cards = Array[Resource("res://scripts/cards/card_resource.gd")]([ExtResource("1_fd7as"), ExtResource("2_2xq4n"), ExtResource("3_jatsm"), ExtResource("4_qfd7o"), ExtResource("5_ml634")])

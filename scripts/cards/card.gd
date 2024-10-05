@@ -1,9 +1,6 @@
 extends Node
 class_name Base_Card
 
-const pop_scene = preload("res://scenes/cards/pop_card.tscn")
-const germ_scene = preload("res://scenes/cards/germ_card.tscn")
-
 @export var card_resource: CardResource
 var sprite_2d: TextureRect
 
@@ -58,6 +55,11 @@ func _on_mouse_exited():
 	)
 
 static func new_card(p_card_resource: CardResource) -> Base_Card:
-	var card = pop_scene.instantiate()
+	var card: Base_Card
+	match p_card_resource.card_type:
+		CardResource.CardType.POPULATION:
+			card = preload("res://scenes/cards/pop_card.tscn").instantiate()
+		CardResource.CardType.DISEASE:
+			card = preload("res://scenes/cards/germ_card.tscn").instantiate()
 	card.card_resource = p_card_resource
 	return card
