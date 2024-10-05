@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckotv1ahudv8f"]
 
-[ext_resource type="Texture2D" uid="uid://cdchssfst520l" path="res://icon.svg" id="1_mwnm0"]
 [ext_resource type="Script" path="res://scripts/controllers/card_standin.gd" id="2_hjgsc"]
+[ext_resource type="Texture2D" uid="uid://b3s57l03r7gre" path="res://resources/cards/populations/school_kids_card.png" id="2_i6e4d"]
 
 [node name="CardStandin" type="TextureRect"]
 anchors_preset = 8
@@ -15,5 +15,8 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_mwnm0")
 script = ExtResource("2_hjgsc")
+
+[node name="SchoolKidsCard" type="Sprite2D" parent="."]
+position = Vector2(66, 66)
+texture = ExtResource("2_i6e4d")
