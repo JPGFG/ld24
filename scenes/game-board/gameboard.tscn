@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=7 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
+[ext_resource type="PackedScene" uid="uid://bwlu63c2x5m75" path="res://scenes/hand.tscn" id="1_7xxgu"]
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
 [ext_resource type="Script" path="res://scenes/game-board/ui-controller.gd" id="2_dp5jn"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
@@ -13,6 +14,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hand" parent="." instance=ExtResource("1_7xxgu")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24
+anchor_top = 0.748
+anchor_right = 1.0
+offset_left = -0.480011
+offset_top = 0.29599
+offset_right = 0.0
+grow_vertical = 0
+alignment = 1
 
 [node name="statsoptions" type="ColorRect" parent="."]
 layout_mode = 1
@@ -205,7 +218,7 @@ horizontal_alignment = 1
 [node name="GameController" type="Node" parent="."]
 script = ExtResource("1_a3i36")
 
-[node name="UIController" type="Node" parent="." node_paths=PackedStringArray("hand_hbox")]
+[node name="UIController" type="Node" parent="."]
 script = ExtResource("2_dp5jn")
 hand_hbox = NodePath("")
 
