@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=10 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
 [ext_resource type="Script" path="res://ui/Title-menu-graphic.gd" id="2_itqaa"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_iiylu"]
 font_size = 34
+
+[sub_resource type="Theme" id="Theme_kudj6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cm21h"]
 animations = [{
@@ -128,7 +130,6 @@ texture = ExtResource("1_uegac")
 script = ExtResource("2_itqaa")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,7 +148,6 @@ label_settings = SubResource("LabelSettings_iiylu")
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,6 +166,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_kudj6")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button"]
@@ -187,6 +188,7 @@ horizontal_alignment = 1
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_kudj6")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button2"]
@@ -207,6 +209,7 @@ text = "SETTINGS"
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_kudj6")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button3"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
-[ext_resource type="Script" path="res://scenes/game-board/ui-controller.gd" id="2_dp5jn"]
+[ext_resource type="Script" path="res://scripts/controllers/ui-controller.gd" id="2_dp5jn"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
 
