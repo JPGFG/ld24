@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://do0v874mxwdsn"]
+
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_6nrs0"]
+[ext_resource type="Texture2D" uid="uid://b4f6wpyr7itj" path="res://assets/sprites/card_images/colera_cluster.png" id="1_8la2o"]
+
+[resource]
+script = ExtResource("1_6nrs0")
+germ_image = ExtResource("1_8la2o")
+multipler = 9
+adder = 2
+card_type = 1
+color = Color(0, 0, 0, 1)
+description = "MRSA"
+infection_multiplier = 0
+name = "COLERA"
+rarity = 0

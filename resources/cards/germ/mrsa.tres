@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://d0qj3p3pagsqe"]
+
+[ext_resource type="Texture2D" uid="uid://qwlpmx8qb3wv" path="res://assets/sprites/card_images/mrsa.png" id="1_7p03m"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_cypnj"]
+
+[resource]
+script = ExtResource("1_cypnj")
+germ_image = ExtResource("1_7p03m")
+multipler = 5
+adder = 9
+card_type = 1
+color = Color(0, 0, 0, 1)
+description = ""
+infection_multiplier = 0
+name = "MRSA"
+rarity = 0
