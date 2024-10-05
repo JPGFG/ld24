@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xfn582cn0yov"
-path="res://.godot/imported/lunch_lady.png-363ce2230b413feb5cedf2d2203346d4.ctex"
+uid="uid://ccypwk70qvj1k"
+path="res://.godot/imported/cholera.png-a8d5fa9b6b96ba64437d602d90e4c159.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/populations/lunch_lady.png"
-dest_files=["res://.godot/imported/lunch_lady.png-363ce2230b413feb5cedf2d2203346d4.ctex"]
+source_file="res://assets/sprites/cards/diseases/cholera.png"
+dest_files=["res://.godot/imported/cholera.png-a8d5fa9b6b96ba64437d602d90e4c159.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bseh5be4hc25d"
-path="res://.godot/imported/back_of_card.png-4a0f655a3aaad5558327a63e149b5b1c.ctex"
+uid="uid://ckb77b1hjk2uw"
+path="res://.godot/imported/jocks_1_card.png-430bef1893112280e7a9d61e23ea8440.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/decks/back_of_card.png"
-dest_files=["res://.godot/imported/back_of_card.png-4a0f655a3aaad5558327a63e149b5b1c.ctex"]
+source_file="res://assets/sprites/cards/populations/jocks_1_card.png"
+dest_files=["res://.godot/imported/jocks_1_card.png-430bef1893112280e7a9d61e23ea8440.ctex"]
 
 [params]
 

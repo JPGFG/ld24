@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpemr8imfq3fx"
-path="res://.godot/imported/influenza.png-b6a87c7d49ba29e3ce66234917ed2578.ctex"
+uid="uid://b3s57l03r7gre"
+path="res://.godot/imported/school_kids_card.png-5c9e6e6756b597000b9a600c03080c4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/diseases/influenza.png"
-dest_files=["res://.godot/imported/influenza.png-b6a87c7d49ba29e3ce66234917ed2578.ctex"]
+source_file="res://assets/sprites/cards/populations/school_kids_card.png"
+dest_files=["res://.godot/imported/school_kids_card.png-5c9e6e6756b597000b9a600c03080c4f.ctex"]
 
 [params]
 

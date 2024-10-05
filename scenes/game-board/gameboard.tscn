@@ -14,42 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="handarea" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.239583
-anchor_top = 0.748457
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.636415, 0.669274, 0.876548, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="handarea"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -69.5
-offset_top = -19.0
-offset_right = 69.5
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "HAND AREA"
-horizontal_alignment = 1
-
-[node name="HandHBox" type="HBoxContainer" parent="handarea"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 876.0
-offset_bottom = 0.000152588
-grow_vertical = 2
-
 [node name="statsoptions" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -243,7 +207,7 @@ script = ExtResource("1_a3i36")
 
 [node name="UIController" type="Node" parent="." node_paths=PackedStringArray("hand_hbox")]
 script = ExtResource("2_dp5jn")
-hand_hbox = NodePath("../handarea/HandHBox")
+hand_hbox = NodePath("")
 
 [node name="GameStateMachine" type="Node" parent="."]
 script = ExtResource("1_4hyl4")
@@ -254,3 +218,39 @@ script = ExtResource("3_loohh")
 
 [node name="GameStateBase" type="Node" parent="GameStateMachine"]
 script = ExtResource("2_dwdl8")
+
+[node name="handarea" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239583
+anchor_top = 0.748457
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.636415, 0.669274, 0.876548, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="handarea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -19.0
+offset_right = 69.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HAND AREA"
+horizontal_alignment = 1
+
+[node name="HandHBox" type="HBoxContainer" parent="handarea"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 876.0
+offset_bottom = 0.000152588
+grow_vertical = 2

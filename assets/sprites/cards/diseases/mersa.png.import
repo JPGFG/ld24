@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbhxk1qg70xm6"
-path="res://.godot/imported/common_cold.png-dacdaaf0e22383b74ebf02cdc0b9ae8e.ctex"
+uid="uid://dd3kmsfj373sb"
+path="res://.godot/imported/mersa.png-4d85ff4cb9e7adb8319099c2d67a5da5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/diseases/common_cold.png"
-dest_files=["res://.godot/imported/common_cold.png-dacdaaf0e22383b74ebf02cdc0b9ae8e.ctex"]
+source_file="res://assets/sprites/cards/diseases/mersa.png"
+dest_files=["res://.godot/imported/mersa.png-4d85ff4cb9e7adb8319099c2d67a5da5.ctex"]
 
 [params]
 

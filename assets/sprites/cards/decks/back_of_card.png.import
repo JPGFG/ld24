@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd3kmsfj373sb"
-path="res://.godot/imported/mersa.png-474c0f6ddcb87dd4076e3e944ef9b3c2.ctex"
+uid="uid://bseh5be4hc25d"
+path="res://.godot/imported/back_of_card.png-c97c00f33f2916026fdf2733d54c7bb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/diseases/mersa.png"
-dest_files=["res://.godot/imported/mersa.png-474c0f6ddcb87dd4076e3e944ef9b3c2.ctex"]
+source_file="res://assets/sprites/cards/decks/back_of_card.png"
+dest_files=["res://.godot/imported/back_of_card.png-c97c00f33f2916026fdf2733d54c7bb6.ctex"]
 
 [params]
 

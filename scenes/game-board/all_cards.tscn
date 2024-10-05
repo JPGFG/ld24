@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://8q63t0r14o5m"]
+[gd_scene load_steps=17 format=3 uid="uid://8q63t0r14o5m"]
 
-[ext_resource type="Texture2D" uid="uid://bseh5be4hc25d" path="res://resources/cards/decks/back_of_card.png" id="1_jyukk"]
-[ext_resource type="Texture2D" uid="uid://ccypwk70qvj1k" path="res://resources/cards/diseases/cholera.png" id="2_cn0dx"]
-[ext_resource type="Texture2D" uid="uid://dbhxk1qg70xm6" path="res://resources/cards/diseases/common_cold.png" id="3_fhcnq"]
-[ext_resource type="Texture2D" uid="uid://dpemr8imfq3fx" path="res://resources/cards/diseases/influenza.png" id="4_tfwhh"]
-[ext_resource type="Texture2D" uid="uid://dd3kmsfj373sb" path="res://resources/cards/diseases/mersa.png" id="5_tc747"]
-[ext_resource type="Texture2D" uid="uid://ckb77b1hjk2uw" path="res://resources/cards/populations/jocks_1_card.png" id="6_i4jpa"]
+[ext_resource type="Texture2D" uid="uid://bseh5be4hc25d" path="res://assets/sprites/cards/decks/back_of_card.png" id="1_jyukk"]
+[ext_resource type="Texture2D" uid="uid://ccypwk70qvj1k" path="res://assets/sprites/cards/diseases/cholera.png" id="2_cn0dx"]
+[ext_resource type="Texture2D" uid="uid://dbhxk1qg70xm6" path="res://assets/sprites/cards/diseases/common_cold.png" id="3_fhcnq"]
+[ext_resource type="Texture2D" uid="uid://dpemr8imfq3fx" path="res://assets/sprites/cards/diseases/influenza.png" id="4_tfwhh"]
+[ext_resource type="Texture2D" uid="uid://dd3kmsfj373sb" path="res://assets/sprites/cards/diseases/mersa.png" id="5_tc747"]
+[ext_resource type="Texture2D" uid="uid://ckb77b1hjk2uw" path="res://assets/sprites/cards/populations/jocks_1_card.png" id="6_i4jpa"]
 [ext_resource type="FontFile" uid="uid://cfu074rula0ps" path="res://resources/fonts/pixel_font_2.ttf" id="7_bljm0"]
-[ext_resource type="Texture2D" uid="uid://xfn582cn0yov" path="res://resources/cards/populations/lunch_lady.png" id="8_e5u82"]
-[ext_resource type="Texture2D" uid="uid://b3s57l03r7gre" path="res://resources/cards/populations/school_kids_card.png" id="9_iosst"]
-[ext_resource type="Texture2D" uid="uid://cxvi2eou3ur56" path="res://resources/cards/populations/stoners.png" id="10_aeqqr"]
+[ext_resource type="Texture2D" uid="uid://xfn582cn0yov" path="res://assets/sprites/cards/populations/lunch_lady.png" id="8_e5u82"]
+[ext_resource type="Texture2D" uid="uid://b3s57l03r7gre" path="res://assets/sprites/cards/populations/school_kids_card.png" id="9_iosst"]
+[ext_resource type="Texture2D" uid="uid://cxvi2eou3ur56" path="res://assets/sprites/cards/populations/stoners.png" id="10_aeqqr"]
+[ext_resource type="Texture2D" uid="uid://jukwob6m5awm" path="res://assets/sprites/cards/decks/blank_card.png" id="11_o41h5"]
+[ext_resource type="Script" path="res://scripts/card.gd" id="12_womvx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nw23a"]
 font = ExtResource("7_bljm0")
@@ -66,8 +68,7 @@ position = Vector2(25, 96)
 texture = ExtResource("5_tc747")
 
 [node name="Jocks1Card" type="Sprite2D" parent="."]
-position = Vector2(417, 333)
-scale = Vector2(8, 8)
+position = Vector2(27, 152)
 texture = ExtResource("6_i4jpa")
 
 [node name="Multiplier" type="Label" parent="Jocks1Card"]
@@ -264,6 +265,60 @@ offset_left = 7.99998
 offset_top = -25.0
 offset_right = 23.0
 offset_bottom = -10.0
+scale = Vector2(0.2, 0.2)
+text = "C
+"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="BlankCard" type="Sprite2D" parent="."]
+position = Vector2(206, 95)
+texture = ExtResource("11_o41h5")
+script = ExtResource("12_womvx")
+
+[node name="Multiplier" type="Label" parent="BlankCard"]
+offset_left = -12.0
+offset_top = 18.0
+offset_right = 48.0
+offset_bottom = 66.0
+scale = Vector2(0.2, 0.2)
+text = "5X"
+label_settings = SubResource("LabelSettings_nw23a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Adder" type="Label" parent="BlankCard"]
+offset_left = -2.00002
+offset_top = 18.0
+offset_right = 60.0
+offset_bottom = 63.0
+scale = Vector2(0.2, 0.2)
+text = "45+"
+label_settings = SubResource("LabelSettings_qd20q")
+
+[node name="Card_Name" type="Label" parent="BlankCard"]
+offset_left = -13.0
+offset_top = -22.0
+offset_right = 86.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+text = "BURNOUTS"
+label_settings = SubResource("LabelSettings_1hun0")
+
+[node name="Description" type="Label" parent="BlankCard"]
+offset_left = -14.0
+offset_top = 8.0
+offset_right = 116.0
+offset_bottom = 41.0
+scale = Vector2(0.2, 0.2)
+text = "How are your lungs feeling bud"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="Rarity" type="Label" parent="BlankCard"]
+offset_left = 9.99998
+offset_top = -22.0
+offset_right = 25.0
+offset_bottom = -7.0
 scale = Vector2(0.2, 0.2)
 text = "C
 "

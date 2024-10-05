@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvi2eou3ur56"
-path="res://.godot/imported/stoners.png-a64b22e0e724e6b6980eba52be90234b.ctex"
+uid="uid://xfn582cn0yov"
+path="res://.godot/imported/lunch_lady.png-bf662089c722ba422aebc53c9817f137.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/populations/stoners.png"
-dest_files=["res://.godot/imported/stoners.png-a64b22e0e724e6b6980eba52be90234b.ctex"]
+source_file="res://assets/sprites/cards/populations/lunch_lady.png"
+dest_files=["res://.godot/imported/lunch_lady.png-bf662089c722ba422aebc53c9817f137.ctex"]
 
 [params]
 

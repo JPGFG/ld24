@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccypwk70qvj1k"
-path="res://.godot/imported/cholera.png-aea39a8076c520adc14689bc5d11c2e8.ctex"
+uid="uid://dpemr8imfq3fx"
+path="res://.godot/imported/influenza.png-b1801016c3160a4ff7da9d08fb03b7db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/diseases/cholera.png"
-dest_files=["res://.godot/imported/cholera.png-aea39a8076c520adc14689bc5d11c2e8.ctex"]
+source_file="res://assets/sprites/cards/diseases/influenza.png"
+dest_files=["res://.godot/imported/influenza.png-b1801016c3160a4ff7da9d08fb03b7db.ctex"]
 
 [params]
 

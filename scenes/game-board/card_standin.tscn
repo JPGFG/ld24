@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckotv1ahudv8f"]
 
 [ext_resource type="Script" path="res://scripts/controllers/card_standin.gd" id="2_hjgsc"]
-[ext_resource type="Texture2D" uid="uid://b3s57l03r7gre" path="res://resources/cards/populations/school_kids_card.png" id="2_i6e4d"]
+[ext_resource type="Texture2D" uid="uid://b3s57l03r7gre" path="res://assets/sprites/cards/populations/school_kids_card.png" id="2_i6e4d"]
 
 [node name="CardStandin" type="TextureRect"]
 anchors_preset = 8
