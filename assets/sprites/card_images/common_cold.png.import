@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckb77b1hjk2uw"
-path="res://.godot/imported/jocks_1_card.png-06fb603e34713939cda8d0aa9103531e.ctex"
+uid="uid://k6uj57pl7jc6"
+path="res://.godot/imported/common_cold.png-7e052bc7bdb8441af55d910ace76eb44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/populations/jocks_1_card.png"
-dest_files=["res://.godot/imported/jocks_1_card.png-06fb603e34713939cda8d0aa9103531e.ctex"]
+source_file="res://assets/sprites/card_images/common_cold.png"
+dest_files=["res://.godot/imported/common_cold.png-7e052bc7bdb8441af55d910ace76eb44.ctex"]
 
 [params]
 

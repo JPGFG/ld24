@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvi2eou3ur56"
-path="res://.godot/imported/stoners.png-a64b22e0e724e6b6980eba52be90234b.ctex"
+uid="uid://cmfnmwn1ybtxi"
+path="res://.godot/imported/burnouts.png-85350a49a1f658f6953feb778fff7da7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/populations/stoners.png"
-dest_files=["res://.godot/imported/stoners.png-a64b22e0e724e6b6980eba52be90234b.ctex"]
+source_file="res://assets/sprites/card_images/burnouts.png"
+dest_files=["res://.godot/imported/burnouts.png-85350a49a1f658f6953feb778fff7da7.ctex"]
 
 [params]
 

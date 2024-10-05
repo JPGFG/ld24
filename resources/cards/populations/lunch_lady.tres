@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://di5iu1et6jwnr"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_5acl3"]
+[ext_resource type="Texture2D" uid="uid://bap4unrwpxdhy" path="res://assets/sprites/card_images/lunch_lady.png" id="1_xydu6"]
+[ext_resource type="Texture2D" uid="uid://ctskkhnxxrhis" path="res://assets/sprites/card_images/cholera.png" id="2_otyl7"]
+
+[resource]
+script = ExtResource("1_5acl3")
+card_image = ExtResource("1_xydu6")
+germ_image = ExtResource("2_otyl7")
+multipler = 18
+adder = 8
+card_type = 0
+color = Color(0, 0, 0, 1)
+description = "What's on her face, is that going into my food"
+infection_multiplier = 0
+name = "LUNCH-LADY"
+rarity = 0

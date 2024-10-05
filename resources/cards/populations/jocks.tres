@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://1xxxgenvf8vk"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_0cbqw"]
+[ext_resource type="Texture2D" uid="uid://c0e1xsylos4wc" path="res://assets/sprites/card_images/jocks.png" id="1_g8wek"]
+[ext_resource type="Texture2D" uid="uid://qwlpmx8qb3wv" path="res://assets/sprites/card_images/mrsa.png" id="2_okrpi"]
+
+[resource]
+script = ExtResource("1_0cbqw")
+card_image = ExtResource("1_g8wek")
+germ_image = ExtResource("2_okrpi")
+multipler = 15
+adder = 10
+card_type = 0
+color = Color(0, 0, 0, 1)
+description = "Balls, back, butt and balls scratchers"
+infection_multiplier = 0
+name = "JOCKS"
+rarity = 0

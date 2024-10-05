@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccypwk70qvj1k"
-path="res://.godot/imported/cholera.png-aea39a8076c520adc14689bc5d11c2e8.ctex"
+uid="uid://qwlpmx8qb3wv"
+path="res://.godot/imported/mrsa.png-1808b8e5908e8e03ead916f35cc5b679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/cards/diseases/cholera.png"
-dest_files=["res://.godot/imported/cholera.png-aea39a8076c520adc14689bc5d11c2e8.ctex"]
+source_file="res://assets/sprites/card_images/mrsa.png"
+dest_files=["res://.godot/imported/mrsa.png-1808b8e5908e8e03ead916f35cc5b679.ctex"]
 
 [params]
 
