@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwlu63c2x5m75"]
 
-[ext_resource type="PackedScene" uid="uid://cwsv7v63wvlum" path="res://scenes/cards/card.tscn" id="1_jlwkv"]
+[ext_resource type="PackedScene" uid="uid://cwsv7v63wvlum" path="res://scenes/cards/pop_card.tscn" id="1_jlwkv"]
 
 [node name="HandHBox" type="HBoxContainer"]
 anchors_preset = 9

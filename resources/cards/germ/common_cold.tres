@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dcrkkjw5njfc5"]
+
+[ext_resource type="Texture2D" uid="uid://dbn38fq3v2p7g" path="res://assets/sprites/card_images/common_cold_cluster.png" id="1_ay3y5"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_yjs3f"]
+
+[resource]
+script = ExtResource("1_yjs3f")
+germ_image = ExtResource("1_ay3y5")
+multipler = 4
+adder = 5
+card_type = 1
+color = Color(0, 0, 0, 1)
+description = ""
+infection_multiplier = 0
+name = "COMMON COLD"
+rarity = 0

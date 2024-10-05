@@ -36,7 +36,7 @@ outline_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
 shadow_size = 3
 shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
 
-[node name="Card" type="Control"]
+[node name="PopCard" type="Control"]
 custom_minimum_size = Vector2(150, 163)
 layout_mode = 3
 anchors_preset = 0
@@ -49,7 +49,7 @@ script = ExtResource("1_jkq72")
 layout_mode = 0
 offset_right = 36.0
 offset_bottom = 52.0
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture = ExtResource("2_kyyhl")
 
 [node name="Multiplier" type="Label" parent="TextureRect"]

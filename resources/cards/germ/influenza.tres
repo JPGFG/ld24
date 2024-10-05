@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bf8pwolkqc6tt"]
+
+[ext_resource type="Texture2D" uid="uid://dnx0fdcpllg86" path="res://assets/sprites/card_images/influenza_cluster.png" id="1_3t1e2"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_5qwuk"]
+
+[resource]
+script = ExtResource("1_5qwuk")
+germ_image = ExtResource("1_3t1e2")
+multipler = 4
+adder = 20
+card_type = 0
+color = Color(0, 0, 0, 1)
+description = ""
+infection_multiplier = 0
+name = "INFLUENZA"
+rarity = 0
