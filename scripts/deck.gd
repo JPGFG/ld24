@@ -2,14 +2,10 @@ extends Node
 class_name Deck
 
 var cards: Array[CardResource] = []
+@export var deck_resource: DeckResource
 
 func _ready():
-    var card_resources = Helper.get_all_resource_paths("res://resources/cards/populations", false)
-    print(card_resources)
-    var resources_size = card_resources.size()
-    for i in range(10):
-        var random_resource = card_resources[randi() % resources_size]
-        var card = load(random_resource)
+    for card in deck_resource.cards:
         cards.append(card)
 
 func shuffle():
