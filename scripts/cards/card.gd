@@ -1,5 +1,5 @@
 extends Node
-class_name Card
+class_name Base_Card
 
 @export var card_resource: CardResource
 @onready var sprite_2d: TextureRect = $TextureRect
