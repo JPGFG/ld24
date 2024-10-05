@@ -1,4 +1,5 @@
 extends Base_Card
+class_name Pop_Card
 
 @onready var adder: Label = $TextureRect/Adder
 @onready var card_name: Label = $TextureRect/Card_Name

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://b8sc3i6qdwmwo"]
+
+[ext_resource type="Texture2D" uid="uid://b8874v22l8bfc" path="res://assets/sprites/card_images/busted_sink.png" id="1_5rk10"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_yfl8a"]
+[ext_resource type="Texture2D" uid="uid://k6uj57pl7jc6" path="res://assets/sprites/card_images/common_cold.png" id="2_aleoq"]
+
+[resource]
+script = ExtResource("1_yfl8a")
+card_image = ExtResource("1_5rk10")
+germ_image = ExtResource("2_aleoq")
+multiplier = 6
+adder = 0
+card_type = 2
+color = Color(0, 0, 0, 1)
+description = "Who broke the sink, guess I can't wash my hands"
+infection_multiplier = 0
+name = "Busted Pipes"
+rarity = 0

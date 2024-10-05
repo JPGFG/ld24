@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://d24g63wgh3hv5"]
+
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_cbgiu"]
+[ext_resource type="Texture2D" uid="uid://boa1sf1eh1jy" path="res://assets/sprites/card_images/sneezing.png" id="1_y6rhp"]
+[ext_resource type="Texture2D" uid="uid://k6uj57pl7jc6" path="res://assets/sprites/card_images/common_cold.png" id="2_pos6t"]
+
+[resource]
+script = ExtResource("1_cbgiu")
+card_image = ExtResource("1_y6rhp")
+germ_image = ExtResource("2_pos6t")
+multiplier = 2
+adder = 0
+card_type = 2
+color = Color(0, 0, 0, 1)
+description = "Some sticky snot hung around apply effects for 2 turns"
+infection_multiplier = 0
+name = "Sneeze"
+rarity = 0
