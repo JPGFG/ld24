@@ -1,0 +1,271 @@
+[gd_scene load_steps=15 format=3 uid="uid://8q63t0r14o5m"]
+
+[ext_resource type="Texture2D" uid="uid://bseh5be4hc25d" path="res://resources/cards/decks/back_of_card.png" id="1_jyukk"]
+[ext_resource type="Texture2D" uid="uid://ccypwk70qvj1k" path="res://resources/cards/diseases/cholera.png" id="2_cn0dx"]
+[ext_resource type="Texture2D" uid="uid://dbhxk1qg70xm6" path="res://resources/cards/diseases/common_cold.png" id="3_fhcnq"]
+[ext_resource type="Texture2D" uid="uid://dpemr8imfq3fx" path="res://resources/cards/diseases/influenza.png" id="4_tfwhh"]
+[ext_resource type="Texture2D" uid="uid://dd3kmsfj373sb" path="res://resources/cards/diseases/mersa.png" id="5_tc747"]
+[ext_resource type="Texture2D" uid="uid://ckb77b1hjk2uw" path="res://resources/cards/populations/jocks_1_card.png" id="6_i4jpa"]
+[ext_resource type="FontFile" uid="uid://cfu074rula0ps" path="res://resources/fonts/pixel_font_2.ttf" id="7_bljm0"]
+[ext_resource type="Texture2D" uid="uid://xfn582cn0yov" path="res://resources/cards/populations/lunch_lady.png" id="8_e5u82"]
+[ext_resource type="Texture2D" uid="uid://b3s57l03r7gre" path="res://resources/cards/populations/school_kids_card.png" id="9_iosst"]
+[ext_resource type="Texture2D" uid="uid://cxvi2eou3ur56" path="res://resources/cards/populations/stoners.png" id="10_aeqqr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nw23a"]
+font = ExtResource("7_bljm0")
+font_size = 32
+font_color = Color(0.6, 0.184314, 0.184314, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd20q"]
+font = ExtResource("7_bljm0")
+font_size = 32
+font_color = Color(0.164706, 0.301961, 0.45098, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hun0"]
+font = ExtResource("7_bljm0")
+font_size = 22
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_34a86"]
+font = ExtResource("7_bljm0")
+outline_size = 5
+outline_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
+shadow_size = 3
+shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
+
+[node name="AllCards" type="Node2D"]
+
+[node name="BackOfCard" type="Sprite2D" parent="."]
+position = Vector2(90, 33)
+texture = ExtResource("1_jyukk")
+
+[node name="Cholera" type="Sprite2D" parent="."]
+position = Vector2(69, 96)
+texture = ExtResource("2_cn0dx")
+
+[node name="CommonCold" type="Sprite2D" parent="."]
+position = Vector2(114, 95)
+texture = ExtResource("3_fhcnq")
+
+[node name="Influenza" type="Sprite2D" parent="."]
+position = Vector2(158, 95)
+texture = ExtResource("4_tfwhh")
+
+[node name="Mersa" type="Sprite2D" parent="."]
+position = Vector2(25, 96)
+texture = ExtResource("5_tc747")
+
+[node name="Jocks1Card" type="Sprite2D" parent="."]
+position = Vector2(417, 333)
+scale = Vector2(8, 8)
+texture = ExtResource("6_i4jpa")
+
+[node name="Multiplier" type="Label" parent="Jocks1Card"]
+offset_left = -15.0
+offset_top = 13.0
+offset_right = 45.0
+offset_bottom = 61.0
+scale = Vector2(0.2, 0.2)
+text = "15X"
+label_settings = SubResource("LabelSettings_nw23a")
+
+[node name="Adder" type="Label" parent="Jocks1Card"]
+offset_left = -4.0
+offset_top = 13.0
+offset_right = 58.0
+offset_bottom = 58.0
+scale = Vector2(0.2, 0.2)
+text = "10+"
+label_settings = SubResource("LabelSettings_qd20q")
+
+[node name="Card_Name" type="Label" parent="Jocks1Card"]
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 73.0
+offset_bottom = 4.0
+scale = Vector2(0.2, 0.2)
+text = "JOCKS"
+label_settings = SubResource("LabelSettings_1hun0")
+
+[node name="Description" type="Label" parent="Jocks1Card"]
+offset_left = -15.0
+offset_top = 5.0
+offset_right = 120.0
+offset_bottom = 38.0
+scale = Vector2(0.2, 0.2)
+text = "Balls, back, butt and balls scratchers"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="Rarity" type="Label" parent="Jocks1Card"]
+offset_left = 8.0
+offset_top = -26.0
+offset_right = 23.0
+offset_bottom = -11.0
+scale = Vector2(0.2, 0.2)
+text = "C
+"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="LunchLady" type="Sprite2D" parent="."]
+position = Vector2(70, 151)
+texture = ExtResource("8_e5u82")
+
+[node name="Multiplier" type="Label" parent="LunchLady"]
+offset_left = -12.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 64.0
+scale = Vector2(0.2, 0.2)
+text = "18X"
+label_settings = SubResource("LabelSettings_nw23a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Adder" type="Label" parent="LunchLady"]
+offset_left = -2.0
+offset_top = 16.0
+offset_right = 60.0
+offset_bottom = 61.0
+scale = Vector2(0.2, 0.2)
+text = "8+"
+label_settings = SubResource("LabelSettings_qd20q")
+metadata/_edit_use_anchors_ = true
+
+[node name="Card_Name" type="Label" parent="LunchLady"]
+offset_left = -15.0
+offset_top = -24.0
+offset_right = 95.0
+offset_bottom = 6.0
+scale = Vector2(0.2, 0.2)
+text = "LUNCH-LADY"
+label_settings = SubResource("LabelSettings_1hun0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Label" parent="LunchLady"]
+offset_left = -15.0
+offset_top = 6.0
+offset_right = 130.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+text = "What's on her face, is that going into my food"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Rarity" type="Label" parent="LunchLady"]
+offset_left = 9.99999
+offset_top = -24.0
+offset_right = 25.0
+offset_bottom = -9.0
+scale = Vector2(0.2, 0.2)
+text = "C
+"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SchoolKidsCard" type="Sprite2D" parent="."]
+position = Vector2(116, 151)
+texture = ExtResource("9_iosst")
+
+[node name="Multiplier" type="Label" parent="SchoolKidsCard"]
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 52.0
+offset_bottom = 64.0
+scale = Vector2(0.2, 0.2)
+text = "20X"
+label_settings = SubResource("LabelSettings_nw23a")
+
+[node name="Card_Name" type="Label" parent="SchoolKidsCard"]
+offset_left = -7.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 6.0
+scale = Vector2(0.2, 0.2)
+text = "STUDENTS"
+label_settings = SubResource("LabelSettings_1hun0")
+
+[node name="Description" type="Label" parent="SchoolKidsCard"]
+offset_left = -15.0
+offset_top = 7.0
+offset_right = 110.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+text = "You for sure don't wash your hands"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="Rarity" type="Label" parent="SchoolKidsCard"]
+offset_left = -13.0
+offset_top = -24.0
+offset_right = 2.0
+offset_bottom = -9.0
+scale = Vector2(0.2, 0.2)
+text = "C
+"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="Stoners" type="Sprite2D" parent="."]
+position = Vector2(161, 153)
+texture = ExtResource("10_aeqqr")
+
+[node name="Multiplier" type="Label" parent="Stoners"]
+offset_left = -14.0
+offset_top = 15.0
+offset_right = 46.0
+offset_bottom = 63.0
+scale = Vector2(0.2, 0.2)
+text = "5X"
+label_settings = SubResource("LabelSettings_nw23a")
+
+[node name="Adder" type="Label" parent="Stoners"]
+offset_left = -4.00002
+offset_top = 15.0
+offset_right = 58.0
+offset_bottom = 60.0
+scale = Vector2(0.2, 0.2)
+text = "45+"
+label_settings = SubResource("LabelSettings_qd20q")
+
+[node name="Card_Name" type="Label" parent="Stoners"]
+offset_left = -15.0
+offset_top = -25.0
+offset_right = 84.0
+offset_bottom = 5.0
+scale = Vector2(0.2, 0.2)
+text = "BURNOUTS"
+label_settings = SubResource("LabelSettings_1hun0")
+
+[node name="Description" type="Label" parent="Stoners"]
+offset_left = -16.0
+offset_top = 5.0
+offset_right = 114.0
+offset_bottom = 38.0
+scale = Vector2(0.2, 0.2)
+text = "How are your lungs feeling bud"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
+
+[node name="Rarity" type="Label" parent="Stoners"]
+offset_left = 7.99998
+offset_top = -25.0
+offset_right = 23.0
+offset_bottom = -10.0
+scale = Vector2(0.2, 0.2)
+text = "C
+"
+label_settings = SubResource("LabelSettings_34a86")
+autowrap_mode = 1
