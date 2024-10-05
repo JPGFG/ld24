@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://cxu63e8yqstxa"]
 
 [ext_resource type="Texture2D" uid="uid://dea2kjh4mcuwt" path="res://assets/sprites/card_images/students.png" id="1_mgwyg"]
-[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_xxnle"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_xxnle"]
 [ext_resource type="Texture2D" uid="uid://k6uj57pl7jc6" path="res://assets/sprites/card_images/common_cold.png" id="2_u5e6a"]
 
 [resource]

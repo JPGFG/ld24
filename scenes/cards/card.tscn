@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwsv7v63wvlum"]
+[gd_scene load_steps=8 format=3 uid="uid://cwsv7v63wvlum"]
 
-[ext_resource type="Script" path="res://scripts/card.gd" id="1_p1lvy"]
-[ext_resource type="Resource" uid="uid://di5iu1et6jwnr" path="res://resources/cards/populations/lunch_lady.tres" id="2_10e0i"]
+[ext_resource type="Script" path="res://scripts/cards/pop_card.gd" id="1_jkq72"]
 [ext_resource type="Texture2D" uid="uid://jukwob6m5awm" path="res://assets/sprites/cards/decks/blank_card.png" id="2_kyyhl"]
 [ext_resource type="FontFile" uid="uid://cfu074rula0ps" path="res://resources/fonts/pixel_font_2.ttf" id="3_v6yfc"]
 
@@ -44,8 +43,7 @@ anchors_preset = 0
 offset_right = 179.0
 offset_bottom = 260.0
 size_flags_horizontal = 3
-script = ExtResource("1_p1lvy")
-card_resource = ExtResource("2_10e0i")
+script = ExtResource("1_jkq72")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
