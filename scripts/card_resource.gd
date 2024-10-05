@@ -6,6 +6,7 @@ enum Rarity { COMMON, RARE, LEGENDARY }
 enum CardType { POPULATION, DISEASE, ADDER }
 
 @export var card_image: Texture2D
+@export var germ_image: Texture2D
 @export var multipler: int
 @export var adder: int
 @export var card_type: CardType
