@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwlu63c2x5m75"]
+
+[ext_resource type="PackedScene" uid="uid://dqjm5e2cu501e" path="res://scenes/card.tscn" id="1_jlwkv"]
+
+[node name="HandHBox" type="HBoxContainer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 766.0
+grow_vertical = 2
+
+[node name="Card" parent="." instance=ExtResource("1_jlwkv")]
+layout_mode = 2
+
+[node name="Card2" parent="." instance=ExtResource("1_jlwkv")]
+layout_mode = 2
+
+[node name="Card3" parent="." instance=ExtResource("1_jlwkv")]
+layout_mode = 2
+
+[node name="Card4" parent="." instance=ExtResource("1_jlwkv")]
+layout_mode = 2
+
+[node name="Card5" parent="." instance=ExtResource("1_jlwkv")]
+layout_mode = 2

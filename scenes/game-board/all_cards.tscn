@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://8q63t0r14o5m"]
+[gd_scene load_steps=15 format=3 uid="uid://dsd4dao3wv3ev"]
 
 [ext_resource type="Texture2D" uid="uid://bseh5be4hc25d" path="res://resources/cards/decks/back_of_card.png" id="1_jyukk"]
 [ext_resource type="Texture2D" uid="uid://ccypwk70qvj1k" path="res://resources/cards/diseases/cholera.png" id="2_cn0dx"]
