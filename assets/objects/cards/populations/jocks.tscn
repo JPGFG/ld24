@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c74fbc6v1nagl"]
 
-[ext_resource type="PackedScene" uid="uid://cwsv7v63wvlum" path="res://scenes/card.tscn" id="1_rvns0"]
+[ext_resource type="PackedScene" uid="uid://cwsv7v63wvlum" path="res://scenes/cards/card.tscn" id="1_rvns0"]
 
 [node name="Jocks" type="Control"]
 layout_mode = 3

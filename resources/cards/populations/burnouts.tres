@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bd8x5g2uoi4q5"]
 
-[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_6i0ny"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_6i0ny"]
 [ext_resource type="Texture2D" uid="uid://cmfnmwn1ybtxi" path="res://assets/sprites/card_images/burnouts.png" id="1_h2v5b"]
 [ext_resource type="Texture2D" uid="uid://d07c1copdbni4" path="res://assets/sprites/card_images/influenza.png" id="2_qodng"]
 
