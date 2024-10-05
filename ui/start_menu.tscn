@@ -1,104 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=22 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
-[ext_resource type="Script" path="res://ui/Title-menu-graphic.gd" id="2_itqaa"]
-[ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="3_qhkts"]
+[ext_resource type="Script" path="res://ui/start_menu.gd" id="1_v5ikw"]
+[ext_resource type="Script" path="res://ui/title-menu-graphic.gd" id="2_itqaa"]
+[ext_resource type="FontFile" uid="uid://cfu074rula0ps" path="res://resources/fonts/pixel_font_2.ttf" id="4_yhmey"]
+[ext_resource type="Theme" uid="uid://b7j1t3yq35cky" path="res://ui/start_button_themes.tres" id="5_3hjga"]
+[ext_resource type="Texture2D" uid="uid://nji6g7rcer3u" path="res://assets/sprites/ui/staph_orbital.png" id="6_d4d6n"]
+[ext_resource type="PackedScene" uid="uid://d1pm4vnruvfpj" path="res://ui/germ_orbital.tscn" id="6_ht7yc"]
+[ext_resource type="Texture2D" uid="uid://duq2jd4pnqdi0" path="res://assets/sprites/ui/cholera_orbital.png" id="7_57bnj"]
+[ext_resource type="Texture2D" uid="uid://ck6myvovukkxk" path="res://assets/sprites/ui/cold_orbital.png" id="8_eiesc"]
+[ext_resource type="Texture2D" uid="uid://cv4ss37f3eccg" path="res://assets/sprites/ui/flu_orbital.png" id="9_hvsro"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iiylu"]
+font = ExtResource("4_yhmey")
 font_size = 34
 
-[sub_resource type="Theme" id="Theme_kudj6"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cm21h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_qhkts")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_npidi"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_anxx6"]
 resource_name = "orbit"
 length = 4.0
 loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title-menu-germ:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(298, 517), Vector2(786, 62)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Title-menu-germ:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(5, 5), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Title-menu-germ:z_index")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, -1]
-}
-
-[sub_resource type="Animation" id="Animation_npidi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title-menu-germ:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(298, 517)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Title-menu-germ:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Title-menu-germ:z_index")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjhtv"]
 _data = {
@@ -106,13 +29,61 @@ _data = {
 "orbit": SubResource("Animation_anxx6")
 }
 
-[node name="StartMenu" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4807"]
+bg_color = Color(0.1131, 0.24232, 0.39, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nlra"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn1ux"]
+bg_color = Color(0.301, 0.4872, 0.7, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_xc5b3"]
+font = ExtResource("4_yhmey")
+font_size = 30
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ssr0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjods"]
+bg_color = Color(0.7254, 0.75088, 0.78, 0.243137)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8yq8"]
+font = ExtResource("4_yhmey")
+font_color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[node name="StartMenu" type="Control" node_paths=PackedStringArray("animation_player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v5ikw")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="BackGround" type="ColorRect" parent="."]
 layout_mode = 1
@@ -123,42 +94,81 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.015, 0.08925, 0.15, 1)
 
-[node name="Title-menu-graphi" type="Sprite2D" parent="."]
-position = Vector2(576, 328)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_uegac")
-script = ExtResource("2_itqaa")
+[node name="OrbitalCenterpoint" parent="." instance=ExtResource("6_ht7yc")]
+position = Vector2(578, 317)
+labelText = "Cholera"
+texture = ExtResource("7_57bnj")
 
-[node name="Label" type="Label" parent="."]
+[node name="OrbitalCenterpoint2" parent="." instance=ExtResource("6_ht7yc")]
+position = Vector2(577, 319)
+labelText = "Cold"
+texture = ExtResource("8_eiesc")
+
+[node name="OrbitalCenterpoint3" parent="." instance=ExtResource("6_ht7yc")]
+position = Vector2(578, 320)
+labelText = "Influenza"
+texture = ExtResource("9_hvsro")
+
+[node name="OrbitalCenterpoint4" parent="." instance=ExtResource("6_ht7yc")]
+position = Vector2(577, 321)
+labelText = "MRSA"
+texture = ExtResource("6_d4d6n")
+
+[node name="Title-menu-graphi" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -90.0
-offset_right = 117.0
-offset_bottom = -41.0
+offset_left = -184.0
+offset_top = -164.0
+offset_right = 180.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "DICKBUTT THE GAME
-connor kane, nick pafundi, and jp"
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(180, 180)
+texture = ExtResource("1_uegac")
+stretch_mode = 5
+script = ExtResource("2_itqaa")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -274.5
+offset_right = 274.5
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Connor Is Bad Programmer
+by connor kane, nick pafundi, and jp"
 label_settings = SubResource("LabelSettings_iiylu")
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 308.0
+offset_top = -167.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 300
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 300
-theme_override_constants/margin_bottom = 30
+grow_vertical = 0
+theme_override_constants/margin_left = 320
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 320
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -166,8 +176,9 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_kudj6")
+theme = ExtResource("5_3hjga")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button"]
 layout_mode = 1
@@ -188,8 +199,9 @@ horizontal_alignment = 1
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_kudj6")
+theme = ExtResource("5_3hjga")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button2"]
 layout_mode = 1
@@ -209,8 +221,9 @@ text = "SETTINGS"
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_kudj6")
+theme = ExtResource("5_3hjga")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button3"]
 layout_mode = 1
@@ -227,13 +240,102 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "QUIT GAME"
 
-[node name="Title-menu-germ" type="AnimatedSprite2D" parent="."]
-z_index = -1
-position = Vector2(298, 517)
-sprite_frames = SubResource("SpriteFrames_cm21h")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
 libraries = {
 "": SubResource("AnimationLibrary_wjhtv")
 }
+
+[node name="FluLine" type="Line2D" parent="."]
+points = PackedVector2Array(241, 474, 463, 474, 498, 390)
+width = 4.0
+default_color = Color(0.7, 0.7, 0.7, 1)
+begin_cap_mode = 1
+antialiased = true
+
+[node name="InfluenzaBox" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 465.0
+offset_right = 242.0
+offset_bottom = 614.0
+
+[node name="Panel" type="Panel" parent="InfluenzaBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i4807")
+
+[node name="MarginContainer" type="MarginContainer" parent="InfluenzaBox/Panel"]
+layout_mode = 0
+offset_right = 203.0
+offset_bottom = 57.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfluenzaBox/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleTag" type="MarginContainer" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/TitleTag"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1nlra")
+
+[node name="Panel" type="Panel" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/TitleTag/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cn1ux")
+
+[node name="MarginContainer" type="MarginContainer" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/TitleTag/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/TitleTag/PanelContainer/MarginContainer"]
+z_index = 1
+layout_mode = 2
+text = "Influenza"
+label_settings = SubResource("LabelSettings_xc5b3")
+horizontal_alignment = 1
+
+[node name="Separator" type="Panel" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_ssr0n")
+
+[node name="Description" type="MarginContainer" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 65
+theme_override_constants/margin_bottom = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/Description"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/Description/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vjods")
+
+[node name="MarginContainer" type="MarginContainer" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/Description/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="InfluenzaBox/Panel/MarginContainer/VBoxContainer/Description/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "an infection of the
+nose, throat, and 
+lungs, can spread to
+epidemic levels."
+label_settings = SubResource("LabelSettings_m8yq8")
+
+[node name="Line2D" type="Line2D" parent="InfluenzaBox"]
+position = Vector2(207, 1)

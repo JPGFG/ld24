@@ -1,4 +1,4 @@
-extends Sprite2D
+extends TextureRect
 
 var rotation_mult : float = 0.1
 
