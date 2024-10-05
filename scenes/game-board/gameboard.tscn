@@ -1,0 +1,256 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5bq40gj4dwru"]
+
+[ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
+[ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
+[ext_resource type="Script" path="res://scenes/game-board/ui-controller.gd" id="2_dp5jn"]
+[ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
+[ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
+
+[node name="Gameboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="handarea" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239583
+anchor_top = 0.748457
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.636415, 0.669274, 0.876548, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="handarea"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -19.0
+offset_right = 69.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HAND AREA"
+horizontal_alignment = 1
+
+[node name="HandHBox" type="HBoxContainer" parent="handarea"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 876.0
+offset_bottom = 0.000152588
+grow_vertical = 2
+
+[node name="statsoptions" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.763889
+anchor_right = 0.112847
+anchor_bottom = 1.0
+grow_vertical = 0
+color = Color(1, 0.396078, 0.34902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="statsoptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -11.5
+offset_right = 61.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "STATS/OPTIONS"
+horizontal_alignment = 1
+
+[node name="playerdeck" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.134549
+anchor_top = 0.763889
+anchor_right = 0.21875
+anchor_bottom = 1.00926
+offset_top = 1.14441e-05
+offset_bottom = -6.0
+grow_vertical = 2
+color = Color(1, 0.0901961, 0.223529, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="playerdeck"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -37.5
+offset_right = 51.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAYER 
+DECK
+ICON"
+horizontal_alignment = 1
+
+[node name="battleground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201389
+anchor_top = 0.37037
+anchor_right = 0.798611
+anchor_bottom = 0.697531
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.498039, 0.172549, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="battleground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = 64.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BATTLEGROUND"
+horizontal_alignment = 1
+
+[node name="enemystats" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.728299
+anchor_right = 1.0
+anchor_bottom = 0.231481
+grow_horizontal = 0
+color = Color(0.663939, 0.368888, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="enemystats"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -11.5
+offset_right = 105.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ENEMY HEALTH AND STATS"
+horizontal_alignment = 1
+
+[node name="resistances" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.257812
+anchor_right = 0.696181
+anchor_bottom = 0.205247
+offset_right = -3.05176e-05
+grow_horizontal = 2
+color = Color(0.98, 0, 0.179667, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="resistances"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -11.5
+offset_right = 79.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ENEMY RESISTENCES"
+
+[node name="turnwarning" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 0.119792
+anchor_bottom = 0.220679
+color = Color(1, 0.1, 0.1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="turnwarning"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -11.5
+offset_right = 45.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "TURN LIMIT"
+
+[node name="deploybutton" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.856771
+anchor_top = 0.459877
+anchor_right = 0.967014
+anchor_bottom = 0.592593
+offset_left = 2.28882e-05
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.32, 0.592, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="deploybutton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DEPLOY"
+horizontal_alignment = 1
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("1_a3i36")
+
+[node name="UIController" type="Node" parent="." node_paths=PackedStringArray("hand_hbox")]
+script = ExtResource("2_dp5jn")
+hand_hbox = NodePath("../handarea/HandHBox")
+
+[node name="GameStateMachine" type="Node" parent="."]
+script = ExtResource("1_4hyl4")
+initial_state = NodePath("TurnStart")
+
+[node name="TurnStart" type="Node" parent="GameStateMachine"]
+script = ExtResource("3_loohh")
+
+[node name="GameStateBase" type="Node" parent="GameStateMachine"]
+script = ExtResource("2_dwdl8")
