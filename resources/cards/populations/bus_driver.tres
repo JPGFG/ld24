@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://dy8fjt4744ust"]
+
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_egara"]
+[ext_resource type="Texture2D" uid="uid://bpj1verryliah" path="res://assets/sprites/card_images/bus_driver.png" id="1_rh67y"]
+[ext_resource type="Texture2D" uid="uid://k6uj57pl7jc6" path="res://assets/sprites/card_images/common_cold.png" id="2_0gmy4"]
+
+[resource]
+script = ExtResource("1_egara")
+card_image = ExtResource("1_rh67y")
+germ_image = ExtResource("2_0gmy4")
+multiplier = 5
+adder = 5
+card_type = 0
+color = Color(0, 0, 0, 1)
+description = "Wierd, everyone in my neighborhood has the same cold"
+infection_multiplier = 0
+name = "BUS DRIVER"
+rarity = 0

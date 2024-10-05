@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bb6hutgvm7tst"]
+
+[ext_resource type="Texture2D" uid="uid://iusiqlg6jhyj" path="res://assets/sprites/card_images/mutation.png" id="1_487gp"]
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_pdhf5"]
+[ext_resource type="Texture2D" uid="uid://k6uj57pl7jc6" path="res://assets/sprites/card_images/common_cold.png" id="2_8gm40"]
+
+[resource]
+script = ExtResource("1_pdhf5")
+card_image = ExtResource("1_487gp")
+germ_image = ExtResource("2_8gm40")
+multiplier = 0
+adder = 0
+card_type = 0
+color = Color(0, 0, 0, 1)
+description = "One more day of sickness"
+infection_multiplier = 0
+name = "MUTATION"
+rarity = 0

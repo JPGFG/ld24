@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7wtenwx7777o"]
+[gd_scene load_steps=18 format=3 uid="uid://7wtenwx7777o"]
 
 [ext_resource type="PackedScene" uid="uid://cwsv7v63wvlum" path="res://scenes/cards/pop_card.tscn" id="1_mrc22"]
 [ext_resource type="Resource" uid="uid://bd8x5g2uoi4q5" path="res://resources/cards/populations/burnouts.tres" id="2_dndtn"]
@@ -6,10 +6,17 @@
 [ext_resource type="Resource" uid="uid://di5iu1et6jwnr" path="res://resources/cards/populations/lunch_lady.tres" id="4_d6i3l"]
 [ext_resource type="Resource" uid="uid://cxu63e8yqstxa" path="res://resources/cards/populations/students.tres" id="5_detn4"]
 [ext_resource type="PackedScene" uid="uid://chfgojxkqehb1" path="res://scenes/cards/germ_card.tscn" id="6_k2h3f"]
+[ext_resource type="Resource" uid="uid://dy8fjt4744ust" path="res://resources/cards/populations/bus_driver.tres" id="6_vrgmu"]
 [ext_resource type="Resource" uid="uid://dcrkkjw5njfc5" path="res://resources/cards/germ/common_cold.tres" id="7_mbpcn"]
 [ext_resource type="Resource" uid="uid://do0v874mxwdsn" path="res://resources/cards/germ/colera.tres" id="8_fo30r"]
 [ext_resource type="Resource" uid="uid://bf8pwolkqc6tt" path="res://resources/cards/germ/influenza.tres" id="9_0e2al"]
 [ext_resource type="Resource" uid="uid://d0qj3p3pagsqe" path="res://resources/cards/germ/mrsa.tres" id="10_8s0gh"]
+[ext_resource type="PackedScene" uid="uid://o6nbcmarsayx" path="res://scenes/cards/addon_card.tscn" id="12_ark0v"]
+[ext_resource type="Resource" uid="uid://x6lar56fuu74" path="res://resources/cards/addons/coughing.tres" id="13_qs0hf"]
+[ext_resource type="Resource" uid="uid://d24g63wgh3hv5" path="res://resources/cards/addons/sneezing.tres" id="14_lhwhq"]
+[ext_resource type="Resource" uid="uid://b8sc3i6qdwmwo" path="res://resources/cards/addons/busted_pipes.tres" id="15_ftm60"]
+[ext_resource type="Resource" uid="uid://c2qi8r6g4vtd1" path="res://resources/cards/addons/storm.tres" id="16_1els3"]
+[ext_resource type="Resource" uid="uid://bb6hutgvm7tst" path="res://resources/cards/addons/mutation.tres" id="17_x878k"]
 
 [node name="TestHand" type="Control"]
 layout_mode = 3
@@ -20,57 +27,99 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Card" parent="." instance=ExtResource("1_mrc22")]
-offset_left = 326.0
-offset_top = 49.0
-offset_right = 505.0
-offset_bottom = 309.0
+offset_left = 46.0
+offset_top = 38.0
+offset_right = 225.0
+offset_bottom = 298.0
 card_resource = ExtResource("2_dndtn")
 
 [node name="Card2" parent="." instance=ExtResource("1_mrc22")]
-offset_left = 442.0
-offset_top = 50.0
-offset_right = 621.0
-offset_bottom = 310.0
+offset_left = 162.0
+offset_top = 39.0
+offset_right = 341.0
+offset_bottom = 299.0
 card_resource = ExtResource("3_puxko")
 
 [node name="Card3" parent="." instance=ExtResource("1_mrc22")]
-offset_left = 555.0
-offset_top = 51.0
-offset_right = 734.0
-offset_bottom = 311.0
+offset_left = 275.0
+offset_top = 40.0
+offset_right = 454.0
+offset_bottom = 300.0
 card_resource = ExtResource("4_d6i3l")
 
 [node name="Card4" parent="." instance=ExtResource("1_mrc22")]
-offset_left = 687.0
-offset_top = 53.0
-offset_right = 866.0
-offset_bottom = 313.0
+offset_left = 407.0
+offset_top = 42.0
+offset_right = 586.0
+offset_bottom = 302.0
 card_resource = ExtResource("5_detn4")
 
+[node name="Card5" parent="." instance=ExtResource("1_mrc22")]
+offset_left = 514.0
+offset_top = 43.0
+offset_right = 693.0
+offset_bottom = 303.0
+card_resource = ExtResource("6_vrgmu")
+
 [node name="GermCard" parent="." instance=ExtResource("6_k2h3f")]
-offset_left = 318.0
-offset_top = 344.0
-offset_right = 318.0
-offset_bottom = 344.0
+offset_left = 49.0
+offset_top = 328.0
+offset_right = 49.0
+offset_bottom = 328.0
 card_resource = ExtResource("7_mbpcn")
 
 [node name="GermCard2" parent="." instance=ExtResource("6_k2h3f")]
-offset_left = 427.0
-offset_top = 346.0
-offset_right = 427.0
-offset_bottom = 346.0
+offset_left = 158.0
+offset_top = 330.0
+offset_right = 158.0
+offset_bottom = 330.0
 card_resource = ExtResource("8_fo30r")
 
 [node name="GermCard3" parent="." instance=ExtResource("6_k2h3f")]
-offset_left = 547.0
-offset_top = 348.0
-offset_right = 547.0
-offset_bottom = 348.0
+offset_left = 278.0
+offset_top = 332.0
+offset_right = 278.0
+offset_bottom = 332.0
 card_resource = ExtResource("9_0e2al")
 
 [node name="GermCard4" parent="." instance=ExtResource("6_k2h3f")]
-offset_left = 688.0
-offset_top = 348.0
-offset_right = 688.0
-offset_bottom = 348.0
+offset_left = 419.0
+offset_top = 332.0
+offset_right = 419.0
+offset_bottom = 332.0
 card_resource = ExtResource("10_8s0gh")
+
+[node name="AddonCard" parent="." instance=ExtResource("12_ark0v")]
+offset_left = 579.0
+offset_top = 332.0
+offset_right = 579.0
+offset_bottom = 332.0
+card_resource = ExtResource("13_qs0hf")
+
+[node name="AddonCard2" parent="." instance=ExtResource("12_ark0v")]
+offset_left = 675.0
+offset_top = 334.0
+offset_right = 675.0
+offset_bottom = 334.0
+card_resource = ExtResource("14_lhwhq")
+
+[node name="AddonCard3" parent="." instance=ExtResource("12_ark0v")]
+offset_left = 775.0
+offset_top = 335.0
+offset_right = 775.0
+offset_bottom = 335.0
+card_resource = ExtResource("15_ftm60")
+
+[node name="AddonCard4" parent="." instance=ExtResource("12_ark0v")]
+offset_left = 856.0
+offset_top = 336.0
+offset_right = 856.0
+offset_bottom = 336.0
+card_resource = ExtResource("16_1els3")
+
+[node name="AddonCard5" parent="." instance=ExtResource("12_ark0v")]
+offset_left = 942.0
+offset_top = 336.0
+offset_right = 942.0
+offset_bottom = 336.0
+card_resource = ExtResource("17_x878k")

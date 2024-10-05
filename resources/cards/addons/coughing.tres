@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://x6lar56fuu74"]
+
+[ext_resource type="Script" path="res://scripts/cards/card_resource.gd" id="1_gxmut"]
+[ext_resource type="Texture2D" uid="uid://x6hrxfykglo1" path="res://assets/sprites/card_images/coughing.png" id="1_leunh"]
+[ext_resource type="Texture2D" uid="uid://k6uj57pl7jc6" path="res://assets/sprites/card_images/common_cold.png" id="2_veux7"]
+
+[resource]
+script = ExtResource("1_gxmut")
+card_image = ExtResource("1_leunh")
+germ_image = ExtResource("2_veux7")
+multiplier = 4
+adder = 0
+card_type = 2
+color = Color(0, 0, 0, 1)
+description = "Cover your mouth"
+infection_multiplier = 0
+name = "Cough"
+rarity = 0
