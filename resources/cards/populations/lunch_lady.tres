@@ -8,7 +8,7 @@
 script = ExtResource("1_5acl3")
 card_image = ExtResource("1_xydu6")
 germ_image = ExtResource("2_otyl7")
-multipler = 18
+multiplier = 6
 adder = 8
 card_type = 0
 color = Color(0, 0, 0, 1)
