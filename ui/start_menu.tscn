@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bcssis5j82tbw" path="res://assets/sprites/ui/title_graphic.png" id="9_qbfs3"]
 [ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="11_ntm51"]
 [ext_resource type="AudioStream" uid="uid://df5yagb8sfh58" path="res://assets/music/main_menu.mp3" id="12_kxyrp"]
-[ext_resource type="PackedScene" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
+[ext_resource type="PackedScene" uid="uid://g4vp8gmufhge" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
 
 [sub_resource type="Animation" id="Animation_npidi"]
 length = 0.001
