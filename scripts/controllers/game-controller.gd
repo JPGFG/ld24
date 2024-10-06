@@ -35,6 +35,11 @@ var played_hand : Array[Base_Card]
 
 @onready var deploy_button: Button = get_node("/root/Gameboard/deploybutton")
 
+@onready var deploy_sfx_player: AudioStreamPlayer2D = get_node("/root/Gameboard/DeploySFXPlayer")
+@onready var card_sfx_player: AudioStreamPlayer2D = get_node("/root/Gameboard/CardSFXPlayer")
+@onready var deploy_sound: AudioStreamMP3 = preload("res://assets/sounds/deploy.mp3")
+@onready var card_draw_sound: AudioStreamMP3 = preload("res://assets/sounds/card_slide.mp3")
+
 func _ready():
 	update_stats_ui()
 	health_bar.max_value = school_life
@@ -50,6 +55,8 @@ func draw_cards():
 
 	deck.shuffle()
 	while (hand.cards.find(null) != -1):
+		card_sfx_player.stream = card_draw_sound
+		card_sfx_player.play()
 		if deck.cards.size() != 0:
 			var drawn_card = deck.draw_card()
 			await hand.add_card(drawn_card)
@@ -114,6 +121,8 @@ func _on_deploybutton_pressed():
 	if(played_hand == []):
 		print("Error: No Empty Deployments!")
 		return
+	deploy_sfx_player.stream = deploy_sound
+	deploy_sfx_player.play()
 	compute()
 
 

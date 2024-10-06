@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
 [ext_resource type="Script" path="res://scripts/controllers/ui-controller.gd" id="2_dp5jn"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
-[ext_resource type="PackedScene" path="res://scenes/deck.tscn" id="2_g1d5b"]
+[ext_resource type="PackedScene" uid="uid://bae1nh1sab3cj" path="res://scenes/deck.tscn" id="2_g1d5b"]
 [ext_resource type="Texture2D" uid="uid://dll2taw0femgi" path="res://assets/sprites/gameboard/pop_icon_large.png" id="3_0pnbu"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
 [ext_resource type="Texture2D" uid="uid://cop6jo0ekl7pt" path="res://assets/sprites/gameboard/adders_icon_large.png" id="3_lvf5d"]
@@ -551,7 +551,14 @@ text = "Main Menu"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_bgii0")
+volume_db = -5.0
 autoplay = true
+
+[node name="CardSFXPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
+
+[node name="DeploySFXPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
 
 [connection signal="pressed" from="battleground/PopCardSlot/PopCardButton" to="GameController" method="_on_pop_card_button_pressed"]
 [connection signal="pressed" from="battleground/GermCardSlot/GermCardButton" to="GameController" method="_on_germ_card_button_pressed"]

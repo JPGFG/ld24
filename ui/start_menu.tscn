@@ -726,5 +726,7 @@ texture = ExtResource("11_ntm51")
 stream = ExtResource("12_kxyrp")
 autoplay = true
 
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="ColdDeckSelect/Panel/MarginContainer2/ColdButton" to="." method="_on_cold_button_pressed"]
