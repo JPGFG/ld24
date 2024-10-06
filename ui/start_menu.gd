@@ -17,7 +17,10 @@ var flu_endpoint
 @onready var sfx_player: AudioStreamPlayer2D = $"SFXPlayer"
 @onready var ui_accept_sound: AudioStreamMP3 = preload("res://assets/sounds/click_start.mp3")
 
+@onready var title_card_animation_player: AnimationPlayer = $"TitleCardPlayer"
+
 func _ready():
+	title_card_animation_player.play("titlemovement")
 	for child in get_children():
 		if child is GermOrbital:
 			germ_orbital_array.push_back(child)
