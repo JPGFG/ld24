@@ -77,5 +77,7 @@ static func new_card(p_card_resource: CardResource) -> Base_Card:
 			card = preload("res://scenes/cards/pop_card.tscn").instantiate()
 		CardResource.CardType.DISEASE:
 			card = preload("res://scenes/cards/germ_card.tscn").instantiate()
+		CardResource.CardType.ADDER:
+			card = preload("res://scenes/cards/addon_card.tscn").instantiate()
 	card.card_resource = p_card_resource
 	return card
