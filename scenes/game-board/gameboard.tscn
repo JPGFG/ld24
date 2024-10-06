@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=18 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
 [ext_resource type="PackedScene" uid="uid://bwlu63c2x5m75" path="res://scenes/hand.tscn" id="1_7xxgu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
 [ext_resource type="Texture2D" uid="uid://cop6jo0ekl7pt" path="res://assets/sprites/gameboard/adders_icon_large.png" id="3_lvf5d"]
 [ext_resource type="Texture2D" uid="uid://ctkuq2y2d3kcd" path="res://assets/sprites/gameboard/germ_icon_large.png" id="4_xdmw7"]
+[ext_resource type="Texture2D" uid="uid://datpysha7q6u2" path="res://assets/sprites/gameboard/school_house.png" id="11_1nqy1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlvke"]
 
@@ -47,6 +48,7 @@ scale = Vector2(0.999999, 1)
 alignment = 1
 
 [node name="statsoptions" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.763889
@@ -104,7 +106,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="PopCardButton" type="Button" parent="battleground/PopCardSlot"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mlvke")
 
@@ -121,7 +122,6 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="battleground/PopCardSlot/PopCardButton/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 texture = ExtResource("3_0pnbu")
 stretch_mode = 5
@@ -138,7 +138,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="GermCardButton" type="Button" parent="battleground/GermCardSlot"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m6q16")
 
@@ -155,7 +154,6 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="battleground/GermCardSlot/GermCardButton/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 texture = ExtResource("4_xdmw7")
 stretch_mode = 5
@@ -172,7 +170,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Button" type="Button" parent="battleground/UtilSlot"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u2p3o")
 
@@ -189,7 +186,6 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot/Button/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 texture = ExtResource("3_lvf5d")
 stretch_mode = 5
@@ -206,7 +202,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Button" type="Button" parent="battleground/UtilSlot2"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jbjof")
 
@@ -223,7 +218,6 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot2/Button/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 texture = ExtResource("3_lvf5d")
 stretch_mode = 5
@@ -240,7 +234,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Button" type="Button" parent="battleground/UtilSlot3"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2ndmk")
 
@@ -257,7 +250,6 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot3/Button/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 texture = ExtResource("3_lvf5d")
 stretch_mode = 5
@@ -274,7 +266,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Button" type="Button" parent="battleground/UtilSlot4"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bclmn")
 
@@ -291,7 +282,6 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot4/Button/MarginContainer"]
-modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
 texture = ExtResource("3_lvf5d")
 stretch_mode = 5
@@ -333,6 +323,7 @@ offset_bottom = 83.0
 show_percentage = false
 
 [node name="resistances" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.257812
@@ -428,6 +419,15 @@ script = ExtResource("3_loohh")
 
 [node name="GameStateBase" type="Node" parent="GameStateMachine"]
 script = ExtResource("2_dwdl8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1151.0
+offset_bottom = 267.0
+texture = ExtResource("11_1nqy1")
+stretch_mode = 5
 
 [connection signal="pressed" from="battleground/PopCardSlot/PopCardButton" to="GameController" method="_on_pop_card_button_pressed"]
 [connection signal="pressed" from="battleground/GermCardSlot/GermCardButton" to="GameController" method="_on_germ_card_button_pressed"]

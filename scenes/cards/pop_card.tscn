@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwsv7v63wvlum"]
+[gd_scene load_steps=9 format=3 uid="uid://cwsv7v63wvlum"]
 
 [ext_resource type="Script" path="res://scripts/cards/pop_card.gd" id="1_jkq72"]
 [ext_resource type="Texture2D" uid="uid://jukwob6m5awm" path="res://assets/sprites/cards/decks/blank_card.png" id="2_kyyhl"]
 [ext_resource type="FontFile" uid="uid://cfu074rula0ps" path="res://resources/fonts/pixel_font_2.ttf" id="3_v6yfc"]
+[ext_resource type="Texture2D" uid="uid://b4l7gmb7mykog" path="res://assets/sprites/gameboard/pop_icon_small.png" id="4_h81m7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nwlk3"]
 font = ExtResource("3_v6yfc")
@@ -40,8 +41,8 @@ shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
 custom_minimum_size = Vector2(150, 163)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 179.0
-offset_bottom = 260.0
+offset_right = 150.0
+offset_bottom = 183.0
 size_flags_horizontal = 3
 script = ExtResource("1_jkq72")
 
@@ -148,3 +149,12 @@ offset_left = 26.0
 offset_top = 43.6
 offset_right = 44.0
 offset_bottom = 58.6
+
+[node name="Card_Type_Image" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -1.14286
+offset_top = 46.0
+offset_right = 5.85714
+offset_bottom = 53.0
+texture = ExtResource("4_h81m7")
+stretch_mode = 5
