@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=37 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
 [ext_resource type="Script" path="res://ui/start_menu.gd" id="1_v5ikw"]
@@ -10,13 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://duq2jd4pnqdi0" path="res://assets/sprites/ui/cholera_orbital.png" id="7_57bnj"]
 [ext_resource type="Texture2D" uid="uid://ck6myvovukkxk" path="res://assets/sprites/ui/cold_orbital.png" id="8_eiesc"]
 [ext_resource type="Texture2D" uid="uid://cv4ss37f3eccg" path="res://assets/sprites/ui/flu_orbital.png" id="9_hvsro"]
+[ext_resource type="Texture2D" uid="uid://bcssis5j82tbw" path="res://assets/sprites/ui/title_graphic.png" id="9_qbfs3"]
 [ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="11_ntm51"]
 [ext_resource type="AudioStream" uid="uid://df5yagb8sfh58" path="res://assets/music/main_menu.mp3" id="12_kxyrp"]
-[ext_resource type="PackedScene" uid="uid://g4vp8gmufhge" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_iiylu"]
-font = ExtResource("4_yhmey")
-font_size = 34
+[ext_resource type="PackedScene" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
 
 [sub_resource type="Animation" id="Animation_npidi"]
 length = 0.001
@@ -135,6 +132,68 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="Animation" id="Animation_hfu4g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.1309]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_wknku"]
+resource_name = "titlemovement"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1brf7"]
+_data = {
+"RESET": SubResource("Animation_hfu4g"),
+"titlemovement": SubResource("Animation_wknku")
+}
+
 [node name="StartMenu" type="Control" node_paths=PackedStringArray("animation_player", "main_menu_items", "sub_menu_panels")]
 layout_mode = 3
 anchors_preset = 15
@@ -195,14 +254,22 @@ texture = ExtResource("1_uegac")
 stretch_mode = 5
 script = ExtResource("2_itqaa")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(572, 126)
+rotation = -0.1309
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_qbfs3")
+offset = Vector2(180, 2.08165e-12)
+
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -274.5
-offset_right = 274.5
-offset_bottom = 97.0
+offset_left = -274.0
+offset_top = 199.0
+offset_right = 275.0
+offset_bottom = 296.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
@@ -211,11 +278,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Label" type="Label" parent="MarginContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "Cardtagion
-by connor kane, nick pafundi, and jp"
-label_settings = SubResource("LabelSettings_iiylu")
+text = "A game by Connor Kane, Nick Pafundi, and JP"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -728,6 +791,11 @@ stream = ExtResource("12_kxyrp")
 autoplay = true
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TitleCardPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1brf7")
+}
 
 [node name="LocationPicker" parent="." instance=ExtResource("13_1q0f2")]
 visible = false
