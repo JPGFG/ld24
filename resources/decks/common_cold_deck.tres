@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="DeckResource" load_steps=7 format=3 uid="uid://dogj1qx38hwul"]
+[gd_resource type="Resource" script_class="DeckResource" load_steps=10 format=3 uid="uid://dogj1qx38hwul"]
 
 [ext_resource type="Resource" uid="uid://dcrkkjw5njfc5" path="res://resources/cards/germ/common_cold.tres" id="1_fd7as"]
 [ext_resource type="Script" path="res://scripts/cards/deck_resource.gd" id="1_haj3m"]
-[ext_resource type="Resource" uid="uid://bd8x5g2uoi4q5" path="res://resources/cards/populations/burnouts.tres" id="2_2xq4n"]
-[ext_resource type="Resource" uid="uid://1xxxgenvf8vk" path="res://resources/cards/populations/jocks.tres" id="3_jatsm"]
-[ext_resource type="Resource" uid="uid://di5iu1et6jwnr" path="res://resources/cards/populations/lunch_lady.tres" id="4_qfd7o"]
+[ext_resource type="Resource" uid="uid://dy8fjt4744ust" path="res://resources/cards/populations/bus_driver.tres" id="3_wtp2x"]
+[ext_resource type="Resource" uid="uid://b8sc3i6qdwmwo" path="res://resources/cards/addons/busted_pipes.tres" id="4_xghro"]
+[ext_resource type="Resource" uid="uid://x6lar56fuu74" path="res://resources/cards/addons/coughing.tres" id="5_hjwq7"]
 [ext_resource type="Resource" uid="uid://cxu63e8yqstxa" path="res://resources/cards/populations/students.tres" id="5_ml634"]
+[ext_resource type="Resource" uid="uid://bb6hutgvm7tst" path="res://resources/cards/addons/mutation.tres" id="6_o3pkg"]
+[ext_resource type="Resource" uid="uid://d24g63wgh3hv5" path="res://resources/cards/addons/sneezing.tres" id="7_f7yn7"]
+[ext_resource type="Resource" uid="uid://c2qi8r6g4vtd1" path="res://resources/cards/addons/storm.tres" id="8_vfwrn"]
 
 [resource]
 script = ExtResource("1_haj3m")
-cards = Array[Resource("res://scripts/cards/card_resource.gd")]([ExtResource("1_fd7as"), ExtResource("2_2xq4n"), ExtResource("3_jatsm"), ExtResource("4_qfd7o"), ExtResource("5_ml634")])
+cards = Array[Resource("res://scripts/cards/card_resource.gd")]([ExtResource("1_fd7as"), ExtResource("1_fd7as"), ExtResource("1_fd7as"), ExtResource("1_fd7as"), ExtResource("1_fd7as"), ExtResource("5_ml634"), ExtResource("5_ml634"), ExtResource("3_wtp2x"), ExtResource("4_xghro"), ExtResource("5_hjwq7"), ExtResource("5_hjwq7"), ExtResource("6_o3pkg"), ExtResource("7_f7yn7"), ExtResource("7_f7yn7"), ExtResource("8_vfwrn")])
