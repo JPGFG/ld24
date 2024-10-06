@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=32 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
 [ext_resource type="Script" path="res://ui/start_menu.gd" id="1_v5ikw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://duq2jd4pnqdi0" path="res://assets/sprites/ui/cholera_orbital.png" id="7_57bnj"]
 [ext_resource type="Texture2D" uid="uid://ck6myvovukkxk" path="res://assets/sprites/ui/cold_orbital.png" id="8_eiesc"]
 [ext_resource type="Texture2D" uid="uid://cv4ss37f3eccg" path="res://assets/sprites/ui/flu_orbital.png" id="9_hvsro"]
+[ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="11_ntm51"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iiylu"]
 font = ExtResource("4_yhmey")
@@ -75,7 +76,64 @@ corner_radius_bottom_left = 4
 font = ExtResource("4_yhmey")
 font_color = Color(0.61339, 0.61339, 0.61339, 1)
 
-[node name="StartMenu" type="Control" node_paths=PackedStringArray("animation_player")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op2vw"]
+bg_color = Color(0.1131, 0.24232, 0.39, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg3ja"]
+bg_color = Color(0.312, 0.5304, 0.78, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp1nx"]
+font = ExtResource("4_yhmey")
+
+[sub_resource type="LabelSettings" id="LabelSettings_or1nn"]
+font = ExtResource("4_yhmey")
+font_size = 14
+
+[sub_resource type="Theme" id="Theme_ql6op"]
+Button/styles/disabled = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b2m7"]
+bg_color = Color(0.312, 0.5304, 0.78, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f44o"]
+bg_color = Color(0.336, 0.5712, 0.84, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26ruc"]
+bg_color = Color(0.204, 0.3468, 0.51, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sul7"]
+bg_color = Color(0.1131, 0.24232, 0.39, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="StartMenu" type="Control" node_paths=PackedStringArray("animation_player", "main_menu_items", "sub_menu_panels")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,6 +142,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v5ikw")
 animation_player = NodePath("AnimationPlayer")
+main_menu_items = [NodePath("MarginContainer/VBoxContainer/StartGame"), NodePath("MarginContainer/VBoxContainer/Settings"), NodePath("MarginContainer/VBoxContainer/QuitGame")]
+sub_menu_panels = [NodePath("ColdDeckSelect"), NodePath("FluDeckSelect"), NodePath("MRSADeckSelect"), NodePath("CholeraDeckSelect")]
 
 [node name="BackGround" type="ColorRect" parent="."]
 layout_mode = 1
@@ -94,6 +154,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.015, 0.08925, 0.15, 1)
 
+[node name="OrbitalCenterpoint3" parent="." instance=ExtResource("6_ht7yc")]
+position = Vector2(578, 320)
+labelText = "Influenza"
+texture = ExtResource("9_hvsro")
+
 [node name="OrbitalCenterpoint" parent="." instance=ExtResource("6_ht7yc")]
 position = Vector2(578, 317)
 labelText = "Cholera"
@@ -103,11 +168,6 @@ texture = ExtResource("7_57bnj")
 position = Vector2(577, 319)
 labelText = "Cold"
 texture = ExtResource("8_eiesc")
-
-[node name="OrbitalCenterpoint3" parent="." instance=ExtResource("6_ht7yc")]
-position = Vector2(578, 320)
-labelText = "Influenza"
-texture = ExtResource("9_hvsro")
 
 [node name="OrbitalCenterpoint4" parent="." instance=ExtResource("6_ht7yc")]
 position = Vector2(577, 321)
@@ -151,7 +211,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Connor Is Bad Programmer
+text = "Cardtagion
 by connor kane, nick pafundi, and jp"
 label_settings = SubResource("LabelSettings_iiylu")
 horizontal_alignment = 1
@@ -173,14 +233,14 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_3hjga")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartGame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -196,14 +256,14 @@ grow_vertical = 2
 text = "START GAME"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_3hjga")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button2"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -218,14 +278,14 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "SETTINGS"
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitGame" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_3hjga")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Button3"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/QuitGame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -246,6 +306,7 @@ libraries = {
 }
 
 [node name="FluLine" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(241, 474, 463, 474, 498, 390)
 width = 4.0
 default_color = Color(0.7, 0.7, 0.7, 1)
@@ -253,6 +314,7 @@ begin_cap_mode = 1
 antialiased = true
 
 [node name="InfluenzaBox" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 38.0
 offset_top = 465.0
@@ -339,3 +401,325 @@ label_settings = SubResource("LabelSettings_m8yq8")
 
 [node name="Line2D" type="Line2D" parent="InfluenzaBox"]
 position = Vector2(207, 1)
+
+[node name="ColdDeckSelect" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -39.0
+offset_right = -234.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ColdDeckSelect"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_op2vw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColdDeckSelect/Panel"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 60.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ColdDeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 82
+theme_override_constants/margin_bottom = 2
+
+[node name="Panel" type="Panel" parent="ColdDeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yg3ja")
+
+[node name="Label" type="Label" parent="ColdDeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Common Cold"
+label_settings = SubResource("LabelSettings_qp1nx")
+
+[node name="TextDescription" type="MarginContainer" parent="ColdDeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="Label" type="Label" parent="ColdDeckSelect/Panel/VBoxContainer/TextDescription"]
+layout_mode = 2
+text = "The beginner deck.  Good 
+damage with high multipliers."
+label_settings = SubResource("LabelSettings_or1nn")
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColdDeckSelect/Panel"]
+layout_mode = 2
+offset_top = 127.0
+offset_right = 174.0
+offset_bottom = 157.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="ColdButton" type="Button" parent="ColdDeckSelect/Panel/MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_ql6op")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b2m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3f44o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26ruc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8sul7")
+text = "GO"
+
+[node name="TextureRect" type="TextureRect" parent="ColdDeckSelect/Panel"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 59.0
+offset_right = 89.0
+offset_bottom = 99.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_ntm51")
+
+[node name="FluDeckSelect" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -39.0
+offset_right = -35.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="FluDeckSelect"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_op2vw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FluDeckSelect/Panel"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 60.0
+
+[node name="MarginContainer" type="MarginContainer" parent="FluDeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 2
+
+[node name="Panel" type="Panel" parent="FluDeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yg3ja")
+
+[node name="Label" type="Label" parent="FluDeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = " Influenza"
+label_settings = SubResource("LabelSettings_qp1nx")
+
+[node name="TextDescription" type="MarginContainer" parent="FluDeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="Label" type="Label" parent="FluDeckSelect/Panel/VBoxContainer/TextDescription"]
+layout_mode = 2
+text = "Coming Soon!"
+label_settings = SubResource("LabelSettings_or1nn")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="FluDeckSelect/Panel"]
+layout_mode = 2
+offset_top = 127.0
+offset_right = 174.0
+offset_bottom = 157.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="Button" type="Button" parent="FluDeckSelect/Panel/MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_ql6op")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b2m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3f44o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26ruc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8sul7")
+disabled = true
+text = "GO"
+
+[node name="TextureRect" type="TextureRect" parent="FluDeckSelect/Panel"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 59.0
+offset_right = 89.0
+offset_bottom = 99.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_hvsro")
+
+[node name="MRSADeckSelect" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 187.0
+offset_top = -39.0
+offset_right = 361.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MRSADeckSelect"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_op2vw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MRSADeckSelect/Panel"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 60.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MRSADeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 2
+
+[node name="Panel" type="Panel" parent="MRSADeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yg3ja")
+
+[node name="Label" type="Label" parent="MRSADeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "MRSA"
+label_settings = SubResource("LabelSettings_qp1nx")
+
+[node name="TextDescription" type="MarginContainer" parent="MRSADeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="Label" type="Label" parent="MRSADeckSelect/Panel/VBoxContainer/TextDescription"]
+layout_mode = 2
+text = "Coming Soon!"
+label_settings = SubResource("LabelSettings_or1nn")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MRSADeckSelect/Panel"]
+layout_mode = 2
+offset_top = 127.0
+offset_right = 174.0
+offset_bottom = 157.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="Button" type="Button" parent="MRSADeckSelect/Panel/MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_ql6op")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b2m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3f44o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26ruc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8sul7")
+disabled = true
+text = "GO"
+
+[node name="TextureRect" type="TextureRect" parent="MRSADeckSelect/Panel"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 59.0
+offset_right = 89.0
+offset_bottom = 99.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_d4d6n")
+
+[node name="CholeraDeckSelect" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -39.0
+offset_right = 163.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CholeraDeckSelect"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_op2vw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CholeraDeckSelect/Panel"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 60.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CholeraDeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 108
+theme_override_constants/margin_bottom = 2
+
+[node name="Panel" type="Panel" parent="CholeraDeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yg3ja")
+
+[node name="Label" type="Label" parent="CholeraDeckSelect/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = " Cholera"
+label_settings = SubResource("LabelSettings_qp1nx")
+
+[node name="TextDescription" type="MarginContainer" parent="CholeraDeckSelect/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+
+[node name="Label" type="Label" parent="CholeraDeckSelect/Panel/VBoxContainer/TextDescription"]
+layout_mode = 2
+text = "Coming Soon!"
+label_settings = SubResource("LabelSettings_or1nn")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CholeraDeckSelect/Panel"]
+layout_mode = 2
+offset_top = 127.0
+offset_right = 174.0
+offset_bottom = 157.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="Button" type="Button" parent="CholeraDeckSelect/Panel/MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_ql6op")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b2m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3f44o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26ruc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8sul7")
+disabled = true
+text = "GO"
+
+[node name="TextureRect" type="TextureRect" parent="CholeraDeckSelect/Panel"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 59.0
+offset_right = 89.0
+offset_bottom = 99.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_ntm51")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="ColdDeckSelect/Panel/MarginContainer2/ColdButton" to="." method="_on_cold_button_pressed"]
