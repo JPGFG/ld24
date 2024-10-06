@@ -14,11 +14,15 @@ func _ready() -> void:
 	super()
 
 func build_card():
-	#if card_resource.multipler != null:
-	multiplier.text = str(card_resource.multiplier) + "X"
+	if card_resource.multiplier != null and card_resource.multiplier != 0:
+		multiplier.text = str(card_resource.multiplier) + "X"
+	else:
+		multiplier.visible = false
 	
-	#if card_resource.adder != null:
-	adder.text = str(card_resource.adder) + "+"
+	if card_resource.adder != null and card_resource.adder != 0:
+		adder.text = str(card_resource.adder) + "+"
+	else:
+		adder.visible = false
 		
 	card_name.text = card_resource.name
 	description.text = card_resource.description
