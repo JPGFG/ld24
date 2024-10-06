@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name FlippableCard
 
 var card_resource: CardResource
@@ -42,7 +42,7 @@ func flip_card_in(card_container: Control, deck: Deck):
 		. set_trans(Tween.TRANS_LINEAR)
 		. set_delay((tween_duration / 2) - 0.1)
 	)
-    
+	
 	await get_tree().create_timer(0.3).timeout
 
 func _on_tween_finished():

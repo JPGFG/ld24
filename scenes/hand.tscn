@@ -7,6 +7,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 766.0
 grow_vertical = 2
+size_flags_horizontal = 2
 script = ExtResource("1_utt7h")
 
 [node name="Control" type="Control" parent="."]

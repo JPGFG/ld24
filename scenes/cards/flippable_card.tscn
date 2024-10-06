@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dad58wcjiie2q"]
+[gd_scene load_steps=3 format=3 uid="uid://qm1hjsu55oj5"]
 
 [ext_resource type="Texture2D" uid="uid://d02qj362jlglm" path="res://assets/sprites/cards/decks/back_of_card_purple.png" id="1_5ials"]
 [ext_resource type="Script" path="res://scripts/cards/flippable_card.gd" id="1_ujywu"]
 
-[node name="FlippableCard" type="Node2D"]
+[node name="FlippableCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_ujywu")
 
 [node name="CardBack" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 47.0
+offset_top = 66.0
+offset_right = 87.0
+offset_bottom = 118.0
+scale = Vector2(3.5, 3.5)
 pivot_offset = Vector2(20, 26)
 texture = ExtResource("1_5ials")
+stretch_mode = 5

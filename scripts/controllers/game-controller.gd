@@ -15,7 +15,8 @@ var resistances = []
 var turns : int = 3
 @onready var turns_ui : Label = get_node("/root/Gameboard/turnwarning/Label")
 var school_life : int = 100
-@onready var school_life_ui : Label = get_node("/root/Gameboard/enemystats/Label")
+@onready var school_life_ui : Label = get_node("/root/Gameboard/enemystats/HealthNumberDisplay")
+@onready var health_bar: ProgressBar = $"../enemystats/HealthBar"
 
 var selected_card:Base_Card = null
 
@@ -31,7 +32,7 @@ var played_hand : Array[Base_Card]
 
 func _ready():
 	update_stats_ui()
-	
+	health_bar.max_value = school_life
 	for button in util_buttons:
 		button.pressed.connect(self._on_util_button_pressed.bind(button))
 		
@@ -143,12 +144,16 @@ func compute():
 	var multiplier_total = pop_multiplier + utility_multiplier
 	var damage_total = base_germ_damage + utility_damage
 	var total_attack_value = damage_total * multiplier_total
-	school_life -= total_attack_value
+	
+	updateHealthStatus(total_attack_value)
 	
 	turns-=1
 	update_stats_ui()
 	discard()
 
+func updateHealthStatus(damage: int):
+	school_life -= damage
+	health_bar.value = school_life
 
 func discard():
 	for card in played_hand:

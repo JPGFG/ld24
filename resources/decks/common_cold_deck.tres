@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dcrkkjw5njfc5" path="res://resources/cards/germ/common_cold.tres" id="1_fd7as"]
 [ext_resource type="Script" path="res://scripts/cards/deck_resource.gd" id="1_haj3m"]
-[ext_resource type="Resource" path="res://resources/cards/populations/bus_driver.tres" id="3_wtp2x"]
+[ext_resource type="Resource" uid="uid://dy8fjt4744ust" path="res://resources/cards/populations/bus_driver.tres" id="3_wtp2x"]
 [ext_resource type="Resource" uid="uid://b8sc3i6qdwmwo" path="res://resources/cards/addons/busted_pipes.tres" id="4_xghro"]
 [ext_resource type="Resource" uid="uid://x6lar56fuu74" path="res://resources/cards/addons/coughing.tres" id="5_hjwq7"]
 [ext_resource type="Resource" uid="uid://cxu63e8yqstxa" path="res://resources/cards/populations/students.tres" id="5_ml634"]

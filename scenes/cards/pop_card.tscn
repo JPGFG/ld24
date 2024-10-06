@@ -49,7 +49,7 @@ script = ExtResource("1_jkq72")
 layout_mode = 0
 offset_right = 36.0
 offset_bottom = 52.0
-scale = Vector2(4, 4)
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_kyyhl")
 
 [node name="Multiplier" type="Label" parent="TextureRect"]

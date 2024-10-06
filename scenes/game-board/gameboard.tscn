@@ -1,12 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=17 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
 [ext_resource type="PackedScene" uid="uid://bwlu63c2x5m75" path="res://scenes/hand.tscn" id="1_7xxgu"]
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
 [ext_resource type="Script" path="res://scripts/controllers/ui-controller.gd" id="2_dp5jn"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
-[ext_resource type="PackedScene" uid="uid://bg7m1eamq82w5" path="res://scenes/deck.tscn" id="2_g1d5b"]
+[ext_resource type="PackedScene" uid="uid://bae1nh1sab3cj" path="res://scenes/deck.tscn" id="2_g1d5b"]
+[ext_resource type="Texture2D" uid="uid://dll2taw0femgi" path="res://assets/sprites/gameboard/pop_icon_large.png" id="3_0pnbu"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
+[ext_resource type="Texture2D" uid="uid://cop6jo0ekl7pt" path="res://assets/sprites/gameboard/adders_icon_large.png" id="3_lvf5d"]
+[ext_resource type="Texture2D" uid="uid://ctkuq2y2d3kcd" path="res://assets/sprites/gameboard/germ_icon_large.png" id="4_xdmw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlvke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6q16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u2p3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbjof"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ndmk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bclmn"]
 
 [node name="Gameboard" type="Control"]
 layout_mode = 3
@@ -24,9 +39,11 @@ anchor_left = 0.24
 anchor_top = 0.748
 anchor_right = 1.0
 offset_left = -0.480011
-offset_top = 0.29599
+offset_top = -80.704
 offset_right = 0.0
+offset_bottom = -81.0
 grow_vertical = 0
+scale = Vector2(0.999999, 1)
 alignment = 1
 
 [node name="statsoptions" type="ColorRect" parent="."]
@@ -57,42 +74,27 @@ horizontal_alignment = 1
 
 [node name="Deck" parent="." instance=ExtResource("2_g1d5b")]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 502.0
-offset_right = 263.0
-offset_bottom = 640.0
+offset_left = 134.0
+offset_top = 411.0
+offset_right = 245.0
+offset_bottom = 549.0
+stretch_mode = 5
 
 [node name="battleground" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0876736
-anchor_top = 0.37037
+anchor_top = 0.276235
 anchor_right = 0.861111
-anchor_bottom = 0.697531
+anchor_bottom = 0.603396
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.498039, 0.172549, 1, 1)
+color = Color(0.498039, 0.172549, 1, 0)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="battleground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -11.5
-offset_right = 64.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "BATTLEGROUND"
-horizontal_alignment = 1
-
 [node name="PopCardSlot" type="MarginContainer" parent="battleground"]
-layout_mode = 0
-offset_left = 1.0
+layout_mode = 1
+offset_left = -5.99998
 offset_top = 4.00002
 offset_right = 144.0
 offset_bottom = 210.0
@@ -101,174 +103,234 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="battleground/PopCardSlot"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="battleground/PopCardSlot/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="battleground/PopCardSlot"]
-layout_mode = 2
-text = "POP CARD"
-horizontal_alignment = 1
-
 [node name="PopCardButton" type="Button" parent="battleground/PopCardSlot"]
+modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mlvke")
+
+[node name="MarginContainer" type="MarginContainer" parent="battleground/PopCardSlot/PopCardButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="battleground/PopCardSlot/PopCardButton/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("3_0pnbu")
+stretch_mode = 5
 
 [node name="GermCardSlot" type="MarginContainer" parent="battleground"]
-layout_mode = 0
-offset_left = 146.0
+layout_mode = 1
+offset_left = 145.0
 offset_top = 4.00002
-offset_right = 296.0
+offset_right = 295.0
 offset_bottom = 210.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
-
-[node name="PanelContainer" type="PanelContainer" parent="battleground/GermCardSlot"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="battleground/GermCardSlot/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="battleground/GermCardSlot"]
-layout_mode = 2
-text = "GERM CARD"
-horizontal_alignment = 1
 
 [node name="GermCardButton" type="Button" parent="battleground/GermCardSlot"]
+modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m6q16")
+
+[node name="MarginContainer" type="MarginContainer" parent="battleground/GermCardSlot/GermCardButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="battleground/GermCardSlot/GermCardButton/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("4_xdmw7")
+stretch_mode = 5
 
 [node name="UtilSlot" type="MarginContainer" parent="battleground"]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 4.00003
-offset_right = 446.0
+layout_mode = 1
+offset_left = 295.0
+offset_top = 4.00002
+offset_right = 445.0
 offset_bottom = 210.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
-
-[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="battleground/UtilSlot/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="battleground/UtilSlot"]
-layout_mode = 2
-text = "UTIL
-"
-horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="battleground/UtilSlot"]
+modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u2p3o")
+
+[node name="MarginContainer" type="MarginContainer" parent="battleground/UtilSlot/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot/Button/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("3_lvf5d")
+stretch_mode = 5
 
 [node name="UtilSlot2" type="MarginContainer" parent="battleground"]
-layout_mode = 0
-offset_left = 445.0
-offset_top = 4.00003
-offset_right = 595.0
+layout_mode = 1
+offset_left = 446.0
+offset_top = 4.00002
+offset_right = 596.0
 offset_bottom = 210.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
-
-[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot2"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="battleground/UtilSlot2/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="battleground/UtilSlot2"]
-layout_mode = 2
-text = "UTIL
-"
-horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="battleground/UtilSlot2"]
+modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jbjof")
+
+[node name="MarginContainer" type="MarginContainer" parent="battleground/UtilSlot2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot2/Button/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("3_lvf5d")
+stretch_mode = 5
 
 [node name="UtilSlot3" type="MarginContainer" parent="battleground"]
-layout_mode = 0
-offset_left = 593.0
-offset_top = 4.00003
-offset_right = 743.0
+layout_mode = 1
+offset_left = 597.0
+offset_top = 4.00002
+offset_right = 747.0
 offset_bottom = 210.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot3"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="battleground/UtilSlot3/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="battleground/UtilSlot3"]
-layout_mode = 2
-text = "UTIL
-"
-horizontal_alignment = 1
-
 [node name="Button" type="Button" parent="battleground/UtilSlot3"]
+modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2ndmk")
+
+[node name="MarginContainer" type="MarginContainer" parent="battleground/UtilSlot3/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot3/Button/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("3_lvf5d")
+stretch_mode = 5
 
 [node name="UtilSlot4" type="MarginContainer" parent="battleground"]
-layout_mode = 0
-offset_left = 738.0
-offset_top = 3.00002
-offset_right = 888.0
-offset_bottom = 209.0
+layout_mode = 1
+offset_left = 747.0
+offset_top = 4.00002
+offset_right = 897.0
+offset_bottom = 210.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="battleground/UtilSlot4"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="battleground/UtilSlot4/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="battleground/UtilSlot4"]
-layout_mode = 2
-text = "UTIL
-"
-horizontal_alignment = 1
-
 [node name="Button" type="Button" parent="battleground/UtilSlot4"]
+modulate = Color(1, 1, 1, 0.392157)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bclmn")
+
+[node name="MarginContainer" type="MarginContainer" parent="battleground/UtilSlot4/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="battleground/UtilSlot4/Button/MarginContainer"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("3_lvf5d")
+stretch_mode = 5
 
 [node name="enemystats" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.728299
+anchor_left = 0.728
 anchor_right = 1.0
-anchor_bottom = 0.231481
+anchor_bottom = 0.154
+offset_left = 0.344421
+offset_right = 0.000488281
+offset_bottom = 0.207993
 grow_horizontal = 0
 color = Color(0.663939, 0.368888, 1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="enemystats"]
+[node name="HealthNumberDisplay" type="Label" parent="enemystats"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -105.0
-offset_top = -11.5
-offset_right = 105.0
-offset_bottom = 11.5
+offset_left = -147.5
+offset_top = -45.0
+offset_right = 62.4998
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "School Health: "
-horizontal_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="enemystats"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 40.0
+offset_right = 295.0
+offset_bottom = 83.0
+show_percentage = false
 
 [node name="resistances" type="ColorRect" parent="."]
 layout_mode = 1
