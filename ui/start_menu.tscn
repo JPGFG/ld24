@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=33 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
 [ext_resource type="Script" path="res://ui/start_menu.gd" id="1_v5ikw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ck6myvovukkxk" path="res://assets/sprites/ui/cold_orbital.png" id="8_eiesc"]
 [ext_resource type="Texture2D" uid="uid://cv4ss37f3eccg" path="res://assets/sprites/ui/flu_orbital.png" id="9_hvsro"]
 [ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="11_ntm51"]
+[ext_resource type="AudioStream" uid="uid://df5yagb8sfh58" path="res://assets/music/main_menu.mp3" id="12_kxyrp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iiylu"]
 font = ExtResource("4_yhmey")
@@ -720,6 +721,10 @@ offset_right = 89.0
 offset_bottom = 99.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_ntm51")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_kxyrp")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="ColdDeckSelect/Panel/MarginContainer2/ColdButton" to="." method="_on_cold_button_pressed"]
