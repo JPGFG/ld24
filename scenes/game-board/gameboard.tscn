@@ -295,7 +295,7 @@ offset_right = 105.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "ENEMY HEALTH AND STATS"
+text = "School Health: "
 horizontal_alignment = 1
 
 [node name="resistances" type="ColorRect" parent="."]
@@ -396,3 +396,4 @@ script = ExtResource("2_dwdl8")
 
 [connection signal="pressed" from="battleground/PopCardSlot/PopCardButton" to="GameController" method="_on_pop_card_button_pressed"]
 [connection signal="pressed" from="battleground/GermCardSlot/GermCardButton" to="GameController" method="_on_germ_card_button_pressed"]
+[connection signal="pressed" from="deploybutton" to="GameController" method="_on_deploybutton_pressed"]

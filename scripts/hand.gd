@@ -18,3 +18,6 @@ func add_card(card: CardResource, card_position: int):
 func get_card_container_at_position(position: int) -> Node:
 	var child_containers = get_children()
 	return child_containers[position]
+
+func remove_card(card: CardResource):
+	cards.erase(card)
