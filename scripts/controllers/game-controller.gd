@@ -106,34 +106,49 @@ func _on_util_button_pressed(button):
 
 func _on_deploybutton_pressed():
 	if(played_hand == []):
-		print("No Empty Deployments!")
+		print("Error: No Empty Deployments!")
 		return
 	compute()
 
+
 func compute():
-	var base_germ_damage
-	var pop_multiplier
-	var utility_additives
+	var base_germ_damage = 0
+	var pop_multiplier = 1
+	var utility_damage = 0
+	var utility_multiplier = 0
 	
 	for card in played_hand:
-		if(card.card_resource.card_type == CardResource.CardType.POPULATION):
-			pop_multiplier = card.card_resource.multiplier
-			print("population multiplier: " + str(pop_multiplier))
+		
 		if(card.card_resource.card_type == CardResource.CardType.DISEASE):
 			base_germ_damage = card.card_resource.adder
-			print("base damage: " + str(base_germ_damage))
+		
+		if(card.card_resource.card_type == CardResource.CardType.POPULATION):
+			pop_multiplier += card.card_resource.multiplier
+		
+		if(card.card_resource.card_type == CardResource.CardType.ADDER):
+			utility_damage += card.card_resource.adder
+			if(card.card_resource.multiplier != 0):
+				utility_multiplier += card.card_resource.multiplier
+			card.card_resource.apply_special_effect()
 			
-	##Needs Util Implementation
-	var damage_total
-	if(base_germ_damage && pop_multiplier):
-		damage_total = base_germ_damage * pop_multiplier
-	print("school life: " + str(school_life))
-	school_life -= damage_total
-	print("damage total: " + str(damage_total))
-	print("new school life: " + str(school_life))
+	
+	if(!base_germ_damage):
+		base_germ_damage = 0
+	if(!pop_multiplier):
+		pop_multiplier = 1
+	if(!utility_damage):
+		utility_damage = 0
+	if(!utility_multiplier):
+		0
+	var multiplier_total = pop_multiplier + utility_multiplier
+	var damage_total = base_germ_damage + utility_damage
+	var total_attack_value = damage_total * multiplier_total
+	school_life -= total_attack_value
+	
 	turns-=1
 	update_stats_ui()
 	discard()
+
 
 func discard():
 	for card in played_hand:
