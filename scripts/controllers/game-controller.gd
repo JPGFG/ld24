@@ -48,7 +48,7 @@ func _ready():
 		
 	await get_tree().create_timer(1.0).timeout
 	draw_cards()
-
+	update_stats_ui()
 func draw_cards():
 	while !deck.ready:
 		await deck.ready

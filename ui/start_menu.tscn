@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=37 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
 [ext_resource type="Script" path="res://ui/start_menu.gd" id="1_v5ikw"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bcssis5j82tbw" path="res://assets/sprites/ui/title_graphic.png" id="9_qbfs3"]
 [ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="11_ntm51"]
 [ext_resource type="AudioStream" uid="uid://df5yagb8sfh58" path="res://assets/music/main_menu.mp3" id="12_kxyrp"]
-[ext_resource type="PackedScene" uid="uid://g4vp8gmufhge" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
+[ext_resource type="PackedScene" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
 
 [sub_resource type="Animation" id="Animation_npidi"]
 length = 0.001
@@ -132,6 +132,33 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="Animation" id="Animation_hfu4g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.1309]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+
 [sub_resource type="Animation" id="Animation_wknku"]
 resource_name = "titlemovement"
 length = 3.0
@@ -159,33 +186,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.15, 1.15), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_hfu4g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.1309]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.2, 1.2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1brf7"]
@@ -796,6 +796,7 @@ autoplay = true
 libraries = {
 "": SubResource("AnimationLibrary_1brf7")
 }
+
 [node name="LocationPicker" parent="." instance=ExtResource("13_1q0f2")]
 visible = false
 layout_mode = 1

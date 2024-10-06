@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=27 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
 [ext_resource type="Texture2D" uid="uid://5ybbhj8afc37" path="res://assets/sprites/ui/background.png" id="1_7sk5a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cop6jo0ekl7pt" path="res://assets/sprites/gameboard/adders_icon_large.png" id="3_lvf5d"]
 [ext_resource type="Texture2D" uid="uid://ctkuq2y2d3kcd" path="res://assets/sprites/gameboard/germ_icon_large.png" id="4_xdmw7"]
 [ext_resource type="FontFile" uid="uid://cfu074rula0ps" path="res://resources/fonts/pixel_font_2.ttf" id="5_hd1cc"]
+[ext_resource type="Texture2D" uid="uid://pvjrij75vg38" path="res://assets/sprites/gameboard/mini_school.png" id="9_xh5jg"]
 [ext_resource type="Texture2D" uid="uid://datpysha7q6u2" path="res://assets/sprites/gameboard/school_house.png" id="11_1nqy1"]
 [ext_resource type="AudioStream" uid="uid://cmscdh5ycbx3y" path="res://assets/music/main_theme.mp3" id="14_bgii0"]
 
@@ -26,6 +27,35 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ndmk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bclmn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8xax"]
+bg_color = Color(0.1809, 0.67, 0.360237, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcrn0"]
+bg_color = Color(0.89, 0.5518, 0.5518, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm1q5"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsvlk"]
 bg_color = Color(0.6, 0.156, 0.156, 1)
@@ -342,17 +372,18 @@ layout_mode = 2
 texture = ExtResource("3_lvf5d")
 stretch_mode = 5
 
-[node name="enemystats" type="ColorRect" parent="."]
+[node name="enemystats" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.728
-anchor_right = 1.0
-anchor_bottom = 0.154
+anchor_left = 0.722791
+anchor_top = 0.00925926
+anchor_right = 0.994791
+anchor_bottom = 0.163259
 offset_left = 0.344421
 offset_right = 0.000488281
 offset_bottom = 0.207993
 grow_horizontal = 0
-color = Color(0.663939, 0.368888, 1, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_l8xax")
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthNumberDisplay" type="Label" parent="enemystats"]
@@ -376,7 +407,22 @@ offset_left = 11.0
 offset_top = 40.0
 offset_right = 295.0
 offset_bottom = 83.0
+theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_fcrn0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xm1q5")
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="enemystats"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 5.0
+offset_right = -9.0
+offset_bottom = 35.0
+grow_horizontal = 0
+texture = ExtResource("9_xh5jg")
 
 [node name="resistances" type="ColorRect" parent="."]
 visible = false
