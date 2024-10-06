@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=22 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
 [ext_resource type="Texture2D" uid="uid://5ybbhj8afc37" path="res://assets/sprites/ui/background.png" id="1_7sk5a"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
 [ext_resource type="Script" path="res://scripts/controllers/ui-controller.gd" id="2_dp5jn"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
-[ext_resource type="PackedScene" uid="uid://bae1nh1sab3cj" path="res://scenes/deck.tscn" id="2_g1d5b"]
+[ext_resource type="PackedScene" path="res://scenes/deck.tscn" id="2_g1d5b"]
 [ext_resource type="Texture2D" uid="uid://dll2taw0femgi" path="res://assets/sprites/gameboard/pop_icon_large.png" id="3_0pnbu"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
 [ext_resource type="Texture2D" uid="uid://cop6jo0ekl7pt" path="res://assets/sprites/gameboard/adders_icon_large.png" id="3_lvf5d"]
@@ -25,6 +25,21 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ndmk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bclmn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsvlk"]
+bg_color = Color(0.6, 0.156, 0.156, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oit21"]
+bg_color = Color(0.1131, 0.24232, 0.39, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.87, 0.87, 0.87, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="Gameboard" type="Control"]
 layout_mode = 3
@@ -460,6 +475,80 @@ script = ExtResource("3_loohh")
 [node name="GameStateBase" type="Node" parent="GameStateMachine"]
 script = ExtResource("2_dwdl8")
 
+[node name="WinPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1186.0
+offset_bottom = 663.0
+
+[node name="Panel" type="Panel" parent="WinPanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rsvlk")
+
+[node name="Panel" type="Panel" parent="WinPanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -115.5
+offset_right = 140.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oit21")
+
+[node name="Label" type="Label" parent="WinPanel/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.5
+offset_top = 28.0
+offset_right = 35.5
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "YOU WIN"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="WinPanel/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The school has been overrun
+with your disease.
+
+Thanks for Playing
+LD56!"
+horizontal_alignment = 1
+
+[node name="WinButton" type="Button" parent="WinPanel/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.5
+offset_top = -53.0
+offset_right = 48.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
 [connection signal="pressed" from="battleground/PopCardSlot/PopCardButton" to="GameController" method="_on_pop_card_button_pressed"]
 [connection signal="pressed" from="battleground/GermCardSlot/GermCardButton" to="GameController" method="_on_germ_card_button_pressed"]
 [connection signal="pressed" from="deploybutton" to="GameController" method="_on_deploybutton_pressed"]
+[connection signal="pressed" from="WinPanel/Panel/Panel/WinButton" to="GameController" method="_on_win_button_pressed"]

@@ -14,6 +14,8 @@ var resistances = []
 
 var turns : int = 3
 @onready var turns_ui : Label = get_node("/root/Gameboard/turnwarning/Label")
+
+var school_max_life: int = 100
 var school_life : int = 100
 @onready var school_life_ui : Label = get_node("/root/Gameboard/enemystats/HealthNumberDisplay")
 @onready var health_bar: ProgressBar = $"../enemystats/HealthBar"
@@ -25,6 +27,9 @@ var selected_card:Base_Card = null
 @onready var germ_slot: MarginContainer =  get_node("/root/Gameboard/battleground/GermCardSlot")
 @onready var germ_button: Button = get_node("/root/Gameboard/battleground/GermCardSlot/GermCardButton")
 @export var util_buttons : Array[Button]
+
+@onready var win_panel: PanelContainer = get_node("/root/Gameboard/WinPanel")
+var main_scene = "res://ui/start_menu.tscn"
 
 var played_hand : Array[Base_Card]
 
@@ -149,11 +154,13 @@ func compute():
 	
 	turns-=1
 	update_stats_ui()
-	discard()
+	
+	check_win_conditions()
 
 func updateHealthStatus(damage: int):
 	school_life -= damage
 	health_bar.value = school_life
+
 
 func discard():
 	for card in played_hand:
@@ -168,3 +175,16 @@ func discard():
 func update_stats_ui():
 	school_life_ui.text = "School Life: " + str(school_life)
 	turns_ui.text = "Turns Remaining: " + str(turns)
+
+func check_win_conditions():
+	if(school_life <= 0):
+		win()
+	else:
+		discard()
+
+func win():
+	win_panel.visible = true
+
+
+func _on_win_button_pressed():
+	get_tree().change_scene_to_file(main_scene)
