@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=8 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
 [ext_resource type="PackedScene" uid="uid://bwlu63c2x5m75" path="res://scenes/hand.tscn" id="1_7xxgu"]
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
-[ext_resource type="Resource" uid="uid://dogj1qx38hwul" path="res://resources/decks/common_cold_deck.tres" id="2_2qaxo"]
 [ext_resource type="Script" path="res://scripts/controllers/ui-controller.gd" id="2_dp5jn"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-base.gd" id="2_dwdl8"]
+[ext_resource type="PackedScene" uid="uid://bg7m1eamq82w5" path="res://scenes/deck.tscn" id="2_g1d5b"]
 [ext_resource type="Script" path="res://scripts/game-state-machines/states/turn-start.gd" id="3_loohh"]
-[ext_resource type="Script" path="res://scripts/deck.gd" id="7_8dqh2"]
 
 [node name="Gameboard" type="Control"]
 layout_mode = 3
@@ -16,10 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Deck" type="Node" parent="."]
-script = ExtResource("7_8dqh2")
-deck_resource = ExtResource("2_2qaxo")
+metadata/_edit_vertical_guides_ = [-110.0]
 
 [node name="Hand" parent="." instance=ExtResource("1_7xxgu")]
 layout_mode = 1
@@ -59,36 +55,12 @@ grow_vertical = 2
 text = "STATS/OPTIONS"
 horizontal_alignment = 1
 
-[node name="playerdeck" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.134549
-anchor_top = 0.763889
-anchor_right = 0.21875
-anchor_bottom = 1.00926
-offset_top = 1.14441e-05
-offset_bottom = -6.0
-grow_vertical = 2
-color = Color(1, 0.0901961, 0.223529, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="playerdeck"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = -37.5
-offset_right = 51.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "PLAYER 
-DECK
-ICON"
-horizontal_alignment = 1
+[node name="Deck" parent="." instance=ExtResource("2_g1d5b")]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 502.0
+offset_right = 263.0
+offset_bottom = 640.0
 
 [node name="battleground" type="ColorRect" parent="."]
 layout_mode = 1
@@ -325,7 +297,8 @@ grow_vertical = 2
 text = "ENEMY RESISTENCES"
 
 [node name="turnwarning" type="ColorRect" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 0.119792
 anchor_bottom = 0.220679
 color = Color(1, 0.1, 0.1, 1)

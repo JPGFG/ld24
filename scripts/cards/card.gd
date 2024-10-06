@@ -1,12 +1,6 @@
 extends Node
 class_name Base_Card
 
-
-const pop_scene = preload("res://scenes/cards/pop_card.tscn")
-const germ_scene = preload("res://scenes/cards/germ_card.tscn")
-
-
-
 @export var card_resource: CardResource
 var sprite_2d: TextureRect
 

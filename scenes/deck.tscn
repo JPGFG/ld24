@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg7m1eamq82w5"]
+
+[ext_resource type="Script" path="res://scripts/deck.gd" id="1_0oieq"]
+[ext_resource type="Resource" uid="uid://dogj1qx38hwul" path="res://resources/decks/common_cold_deck.tres" id="2_6jyt7"]
+[ext_resource type="Texture2D" uid="uid://d02qj362jlglm" path="res://assets/sprites/cards/decks/back_of_card_purple.png" id="3_u2axy"]
+
+[node name="Deck" type="TextureRect"]
+texture = ExtResource("3_u2axy")
+script = ExtResource("1_0oieq")
+deck_resource = ExtResource("2_6jyt7")

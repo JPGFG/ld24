@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dad58wcjiie2q"]
+
+[ext_resource type="Texture2D" uid="uid://d02qj362jlglm" path="res://assets/sprites/cards/decks/back_of_card_purple.png" id="1_5ials"]
+
+[node name="FlippableCard" type="Node2D"]
+
+[node name="CardBack" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5ials")
