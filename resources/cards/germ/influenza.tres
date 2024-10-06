@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_5qwuk")
 germ_image = ExtResource("1_3t1e2")
-multipler = 4
+multiplier = 4
 adder = 20
-card_type = 0
+card_type = 1
 color = Color(0, 0, 0, 1)
 description = ""
 infection_multiplier = 0

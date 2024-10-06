@@ -43,11 +43,10 @@ func draw_cards():
 		await deck.ready
 
 	deck.shuffle()
-	while (hand.cards.size() < 5 ):
+	while (hand.cards.find(null) != -1):
 		if deck.cards.size() != 0:
-			var card_index = hand.cards.size()
 			var drawn_card = deck.draw_card()
-			await hand.add_card(drawn_card, card_index)
+			await hand.add_card(drawn_card)
 		else:
 			print("your deck is empty")
 			return
@@ -139,7 +138,7 @@ func compute():
 func discard():
 	for card in played_hand:
 		graveyard.push_back(card)
-		hand.remove_card(card.card_resource)
+		hand.remove_card(card)
 		card.queue_free()
 	played_hand.clear()
 	print(played_hand)

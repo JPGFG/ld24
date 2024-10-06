@@ -19,6 +19,8 @@ var hover_scale_time: float = 0.3
 @onready var parent_control = get_parent()
 var mouse_inside = false
 
+var position_in_hand: int
+
 
 
 # Called when the node enters the scene tree for the first time.
