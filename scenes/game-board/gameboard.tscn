@@ -33,6 +33,15 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_vertical_guides_ = [-110.0]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1151.0
+offset_bottom = 267.0
+texture = ExtResource("11_1nqy1")
+stretch_mode = 5
+
 [node name="Hand" parent="." instance=ExtResource("1_7xxgu")]
 layout_mode = 1
 anchors_preset = -1
@@ -81,6 +90,14 @@ offset_top = 411.0
 offset_right = 245.0
 offset_bottom = 549.0
 stretch_mode = 5
+
+[node name="DeckCount" type="Label" parent="Deck"]
+layout_mode = 0
+offset_left = 42.4
+offset_top = 54.4
+offset_right = 65.4
+offset_bottom = 77.4
+text = "10"
 
 [node name="battleground" type="ColorRect" parent="."]
 layout_mode = 1
@@ -419,15 +436,6 @@ script = ExtResource("3_loohh")
 
 [node name="GameStateBase" type="Node" parent="GameStateMachine"]
 script = ExtResource("2_dwdl8")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -1
-layout_mode = 0
-offset_left = 1.0
-offset_right = 1151.0
-offset_bottom = 267.0
-texture = ExtResource("11_1nqy1")
-stretch_mode = 5
 
 [connection signal="pressed" from="battleground/PopCardSlot/PopCardButton" to="GameController" method="_on_pop_card_button_pressed"]
 [connection signal="pressed" from="battleground/GermCardSlot/GermCardButton" to="GameController" method="_on_germ_card_button_pressed"]
