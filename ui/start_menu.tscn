@@ -94,6 +94,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.015, 0.08925, 0.15, 1)
 
+[node name="OrbitalCenterpoint3" parent="." instance=ExtResource("6_ht7yc")]
+position = Vector2(578, 320)
+labelText = "Influenza"
+texture = ExtResource("9_hvsro")
+
 [node name="OrbitalCenterpoint" parent="." instance=ExtResource("6_ht7yc")]
 position = Vector2(578, 317)
 labelText = "Cholera"
@@ -103,11 +108,6 @@ texture = ExtResource("7_57bnj")
 position = Vector2(577, 319)
 labelText = "Cold"
 texture = ExtResource("8_eiesc")
-
-[node name="OrbitalCenterpoint3" parent="." instance=ExtResource("6_ht7yc")]
-position = Vector2(578, 320)
-labelText = "Influenza"
-texture = ExtResource("9_hvsro")
 
 [node name="OrbitalCenterpoint4" parent="." instance=ExtResource("6_ht7yc")]
 position = Vector2(577, 321)
@@ -151,7 +151,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Connor Is Bad Programmer
+text = "Cardtagion
 by connor kane, nick pafundi, and jp"
 label_settings = SubResource("LabelSettings_iiylu")
 horizontal_alignment = 1
@@ -246,6 +246,7 @@ libraries = {
 }
 
 [node name="FluLine" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(241, 474, 463, 474, 498, 390)
 width = 4.0
 default_color = Color(0.7, 0.7, 0.7, 1)
@@ -253,6 +254,7 @@ begin_cap_mode = 1
 antialiased = true
 
 [node name="InfluenzaBox" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 38.0
 offset_top = 465.0
