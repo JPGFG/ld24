@@ -17,7 +17,7 @@ func build_card():
 	if card_resource.multiplier != null and card_resource.multiplier != 0:
 		multiplier.text = str(card_resource.multiplier) + "X"
 	else:
-		adder.visible = false
+		multiplier.visible = false
 	
 	if card_resource.adder != null and card_resource.adder != 0:
 		adder.text = str(card_resource.adder) + "+"
