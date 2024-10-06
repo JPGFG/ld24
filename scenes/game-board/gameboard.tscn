@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b5bq40gj4dwru"]
+[gd_scene load_steps=19 format=3 uid="uid://b5bq40gj4dwru"]
 
 [ext_resource type="Script" path="res://scripts/game-state-machines/game-state-machine.gd" id="1_4hyl4"]
+[ext_resource type="Texture2D" uid="uid://5ybbhj8afc37" path="res://assets/sprites/ui/background.png" id="1_7sk5a"]
 [ext_resource type="PackedScene" uid="uid://bwlu63c2x5m75" path="res://scenes/hand.tscn" id="1_7xxgu"]
 [ext_resource type="Script" path="res://scripts/controllers/game-controller.gd" id="1_a3i36"]
 [ext_resource type="Script" path="res://scripts/controllers/ui-controller.gd" id="2_dp5jn"]
@@ -33,12 +34,27 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_vertical_guides_ = [-110.0]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -1
+[node name="skybox" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.65, 0.696667, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="skybox"]
 layout_mode = 0
-offset_left = 1.0
-offset_right = 1151.0
-offset_bottom = 267.0
+offset_right = 1152.0
+offset_bottom = 649.0
+texture = ExtResource("1_7sk5a")
+
+[node name="TextureRect2" type="TextureRect" parent="skybox"]
+layout_mode = 2
+offset_left = 341.0
+offset_top = -80.0
+offset_right = 800.0
+offset_bottom = 462.0
 texture = ExtResource("11_1nqy1")
 stretch_mode = 5
 
