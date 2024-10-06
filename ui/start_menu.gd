@@ -3,7 +3,7 @@ extends Control
 
 @export var animation_player: AnimationPlayer
 
-var main_scene = "res://scenes/game-board/gameboard.tscn"
+var main_scene = "res://scenes/game-board/LocationPicker.tscn"
 
 var germ_orbital_array : Array[GermOrbital]
 @onready var flu_line : Line2D = $"FluLine"
@@ -16,6 +16,7 @@ var flu_endpoint
 
 @onready var sfx_player: AudioStreamPlayer2D = $"SFXPlayer"
 @onready var ui_accept_sound: AudioStreamMP3 = preload("res://assets/sounds/click_start.mp3")
+@onready var location_picker: Control = $LocationPicker
 
 func _ready():
 	for child in get_children():
@@ -61,5 +62,5 @@ func _on_start_game_pressed():
 func _on_cold_button_pressed():
 	sfx_player.stream = ui_accept_sound
 	sfx_player.play()
-	await get_tree().create_timer(0.6).timeout
-	get_tree().change_scene_to_file(main_scene)
+	location_picker.show()
+	#get_tree().change_scene_to_file(main_scene)

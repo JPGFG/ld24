@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bsioit7xh2ol6"]
+[gd_scene load_steps=34 format=3 uid="uid://bsioit7xh2ol6"]
 
 [ext_resource type="Texture2D" uid="uid://dlfmu0bfaie5q" path="res://assets/sprites/ui/title-menu-graphi.png" id="1_uegac"]
 [ext_resource type="Script" path="res://ui/start_menu.gd" id="1_v5ikw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cv4ss37f3eccg" path="res://assets/sprites/ui/flu_orbital.png" id="9_hvsro"]
 [ext_resource type="Texture2D" uid="uid://bg4kx0g0707nt" path="res://assets/sprites/ui/title-menu-germ.png" id="11_ntm51"]
 [ext_resource type="AudioStream" uid="uid://df5yagb8sfh58" path="res://assets/music/main_menu.mp3" id="12_kxyrp"]
+[ext_resource type="PackedScene" uid="uid://g4vp8gmufhge" path="res://scenes/game-board/LocationPicker.tscn" id="13_1q0f2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iiylu"]
 font = ExtResource("4_yhmey")
@@ -727,6 +728,10 @@ stream = ExtResource("12_kxyrp")
 autoplay = true
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="LocationPicker" parent="." instance=ExtResource("13_1q0f2")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="ColdDeckSelect/Panel/MarginContainer2/ColdButton" to="." method="_on_cold_button_pressed"]
