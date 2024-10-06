@@ -15,11 +15,8 @@ var mouse_inside = false
 
 var position_in_hand: int
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print($TextureRect)
 	sprite_2d = $TextureRect
 	sprite_start_scale_x = sprite_2d.scale.x
 	sprite_start_scale_y = sprite_2d.scale.y
