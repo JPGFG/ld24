@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://o6nbcmarsayx"]
+[gd_scene load_steps=10 format=3 uid="uid://o6nbcmarsayx"]
 
 [ext_resource type="Script" path="res://scripts/cards/addon_card.gd" id="1_30yjj"]
 [ext_resource type="Texture2D" uid="uid://dnpburnqw0c5s" path="res://assets/sprites/cards/decks/blank_adder_card.png" id="2_6ue1v"]
@@ -25,17 +25,24 @@ shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8nw4n"]
 font = ExtResource("3_rkgiw")
-font_size = 22
-outline_size = 7
+font_size = 80
+outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbcxf"]
 font = ExtResource("3_rkgiw")
-outline_size = 5
+font_size = 70
+outline_size = 10
 outline_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
 shadow_size = 3
 shadow_color = Color(0.0745098, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxu1r"]
+font = ExtResource("3_rkgiw")
+font_size = 80
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="AddonCard" type="Control"]
 layout_mode = 3
@@ -84,15 +91,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Card_Name" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.490385
-anchor_right = 0.5
-anchor_bottom = 0.490385
+anchor_left = 0.503968
+anchor_top = 0.483516
+anchor_right = 7.89286
+anchor_bottom = 1.3489
 offset_left = -13.0
 offset_top = -22.0
 offset_right = 86.0
 offset_bottom = 8.0
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.05, 0.05)
 text = "BURNOUTS"
 label_settings = SubResource("LabelSettings_8nw4n")
 metadata/_edit_use_anchors_ = true
@@ -101,34 +108,34 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.490385
-anchor_right = 0.5
-anchor_bottom = 0.490385
+anchor_top = 0.480769
+anchor_right = 12.75
+anchor_bottom = 4.46154
 offset_left = -14.0
 offset_top = 8.0
 offset_right = 116.0
 offset_bottom = 41.0
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.05, 0.05)
 text = "How are your lungs feeling bud"
 label_settings = SubResource("LabelSettings_tbcxf")
-autowrap_mode = 1
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Rarity" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.505556
-anchor_top = 0.484615
-anchor_right = 0.505556
-anchor_bottom = 0.484615
+anchor_left = 0.500001
+anchor_top = 0.478022
+anchor_right = 1.88889
+anchor_bottom = 1.63187
 offset_left = 9.99998
 offset_top = -22.0
 offset_right = 25.0
 offset_bottom = -7.0
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.05, 0.05)
 text = "C
 "
-label_settings = SubResource("LabelSettings_tbcxf")
+label_settings = SubResource("LabelSettings_fxu1r")
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 

@@ -11,6 +11,7 @@ size_flags_vertical = 3
 script = ExtResource("1_ujywu")
 
 [node name="CardBack" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 47.0
 offset_top = 66.0
 offset_right = 87.0
