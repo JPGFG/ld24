@@ -2,10 +2,17 @@ class_name StartMenu
 extends Control
 
 @export var animation_player: AnimationPlayer
+
+var main_scene = "res://scenes/game-board/gameboard.tscn"
+
 var germ_orbital_array : Array[GermOrbital]
 @onready var flu_line : Line2D = $"FluLine"
 @onready var flu_card : PanelContainer = $"InfluenzaBox"
 var flu_endpoint
+
+@export var main_menu_items: Array[Button]
+@export var sub_menu_items: Array[Button]
+@export var sub_menu_panels: Array[MarginContainer]
 
 func _ready():
 	for child in get_children():
@@ -33,3 +40,18 @@ func _physics_process(delta):
 	#else:
 		#flu_line.visible = false
 	pass
+
+
+func _on_start_game_pressed():
+	for germ_orbital in germ_orbital_array:
+		germ_orbital.visible = false
+	for button in main_menu_items:
+		button.visible = false
+	await get_tree().create_timer(0.2).timeout
+	for panel in sub_menu_panels:
+		panel.visible = true
+	
+
+
+func _on_cold_button_pressed():
+	get_tree().change_scene_to_file(main_scene)
